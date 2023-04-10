@@ -1,0 +1,16 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Network Example Gd4"
+config/description="Scene replication example in 3D with Godot 4"
+run/main_scene="res://multiplayer.tscn"
+config/features=PackedStringArray("4.0")
