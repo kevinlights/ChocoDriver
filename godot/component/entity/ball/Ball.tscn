@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4cy6e2mi1i51"]
+
+[ext_resource type="Texture2D" uid="uid://dy5g3iswdrc1t" path="res://icon.svg" id="1_81xv1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_unjtu"]
+
+[node name="Ball" type="RigidBody2D"]
+gravity_scale = 0.0
+linear_damp = 1.0
+angular_damp = 0.1
+
+[node name="Box" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_unjtu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.148438, 0.148438)
+texture = ExtResource("1_81xv1")
