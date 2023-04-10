@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://vtnh2i0i52vo"]
 
 [ext_resource type="PackedScene" uid="uid://c6br8h3si2ypg" path="res://component/entity/sphere/sphere.tscn" id="1_8awbr"]
 [ext_resource type="Script" path="res://run/levels/flatland/level.gd" id="1_p4gvl"]

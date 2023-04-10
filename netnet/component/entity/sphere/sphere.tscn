@@ -5,8 +5,13 @@ friction = 0.0
 bounce = 1.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_deuj3"]
+radius = 1.0
+height = 2.0
+radial_segments = 8
+rings = 4
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_h6jr2"]
+radius = 1.0
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_q1o6k"]
 properties/0/path = NodePath(".:linear_velocity")

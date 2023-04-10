@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://dir0a2wjc5s7w"]
 
 [ext_resource type="Script" path="res://component/entity/player/player.gd" id="1_hwwnj"]
 [ext_resource type="Script" path="res://component/entity/player/player_input.gd" id="2_ju3m6"]
@@ -22,6 +22,8 @@ properties/0/sync = true
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_37qaq"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jab13"]
+radial_segments = 8
+rings = 4
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_hwwnj")
