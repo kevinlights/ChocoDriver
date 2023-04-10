@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cw8w6clmxedi6"]
+[gd_scene load_steps=7 format=3]
 
-[ext_resource type="Script" path="res://player.gd" id="1_hwwnj"]
-[ext_resource type="Script" path="res://player_input.gd" id="2_ju3m6"]
+[ext_resource type="Script" path="res://component/entity/player/player.gd" id="1_hwwnj"]
+[ext_resource type="Script" path="res://component/entity/player/player_input.gd" id="2_ju3m6"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_fb1vy"]
 properties/0/path = NodePath(".:player")

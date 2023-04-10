@@ -1,14 +1,14 @@
 [gd_scene load_steps=2 format=3 uid="uid://bvnwjpd0f3oa0"]
 
-[ext_resource type="Script" path="res://multiplayer.gd" id="1_jiv4u"]
+[ext_resource type="Script" path="res://run/multiplayer.gd" id="1_t2go4"]
 
 [node name="Multiplayer" type="Node"]
-script = ExtResource("1_jiv4u")
+script = ExtResource("1_t2go4")
 
 [node name="Level" type="Node" parent="."]
 
 [node name="LevelSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://level.tscn")
+_spawnable_scenes = PackedStringArray("res://run/levels/flatland/level.tscn")
 spawn_path = NodePath("../Level")
 spawn_limit = 1
 

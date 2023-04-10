@@ -27,7 +27,7 @@ func _exit_tree():
 
 
 func add_player(id: int):
-	var character = preload("res://player.tscn").instantiate()
+	var character = preload("res://component/entity/player/player.tscn").instantiate()
 	# Set player id.
 	character.player = id
 	# Randomize character position.

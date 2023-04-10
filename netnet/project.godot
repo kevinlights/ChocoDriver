@@ -12,5 +12,5 @@ config_version=5
 
 config/name="Network Example Gd4"
 config/description="Scene replication example in 3D with Godot 4"
-run/main_scene="res://multiplayer.tscn"
+run/main_scene="res://run/multiplayer.tscn"
 config/features=PackedStringArray("4.0")
