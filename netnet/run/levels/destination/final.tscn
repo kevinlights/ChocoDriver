@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf2fnyf7gud6c"]
+
+[ext_resource type="Script" path="res://run/levels/player_manager.gd" id="1_hhmm0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kbpyq"]
+
+[node name="Final" type="Node2D"]
+script = ExtResource("1_hhmm0")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(2, 653)
+
+[node name="Limit" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("WorldBoundaryShape2D_kbpyq")
+
+[node name="PlayerPool" type="Node2D" parent="."]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://component/entity/jumper/jumper.tscn")
+spawn_path = NodePath("../PlayerPool")
+spawn_limit = 4
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(4, 653)
+points = PackedVector2Array(700, 0, 0, 0)
+default_color = Color(0, 1, 1, 1)

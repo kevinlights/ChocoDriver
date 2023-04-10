@@ -2,7 +2,7 @@ extends Node
 
 const PORT = 4433
 
-func _ready():
+func _ready() -> void:
 	# Start paused
 	get_tree().paused = true
 	# You can save bandwith by disabling server relay and peer notifications.
@@ -14,7 +14,7 @@ func _ready():
 		_on_host_pressed.call_deferred()
 
 
-func _on_host_pressed():
+func _on_host_pressed() -> void:
 	# Start as server
 	var peer = ENetMultiplayerPeer.new()
 	peer.create_server(PORT)
@@ -25,7 +25,7 @@ func _on_host_pressed():
 	start_game()
 
 
-func _on_connect_pressed():
+func _on_connect_pressed() -> void:
 	# Start as client
 	var txt : String = $UI/Net/Options/Remote.text
 	if txt == "":
@@ -40,18 +40,18 @@ func _on_connect_pressed():
 	start_game()
 
 
-func start_game():
+func start_game() -> void:
 	# Hide the UI and unpause to start the game.
 	$UI.hide()
 	get_tree().paused = false
 	# Only change level on the server.
 	# Clients will instantiate the level via the spawner.
 	if multiplayer.is_server():
-		change_level.call_deferred(load("res://run/levels/flatland/level.tscn"))
+		change_level.call_deferred(load("res://run/levels/destination/final.tscn"))
 
 
 # Call this function deferred and only on the main authority (server).
-func change_level(scene: PackedScene):
+func change_level(scene: PackedScene) -> void:
 	# Remove old level if any.
 	var level = $Level
 	for c in level.get_children():
@@ -62,8 +62,8 @@ func change_level(scene: PackedScene):
 
 
 # The server can restart the level by pressing HOME.
-func _input(event):
+func _input(event: InputEvent) -> void:
 	if not multiplayer.is_server():
 		return
 	if event.is_action("ui_home") and Input.is_action_just_pressed("ui_home"):
-		change_level.call_deferred(load("res://run/levels/flatland/level.tscn"))
+		change_level.call_deferred(load("res://run/levels/destination/final.tscn"))
