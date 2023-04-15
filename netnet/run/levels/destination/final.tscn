@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cf2fnyf7gud6c"]
+[gd_scene load_steps=4 format=3 uid="uid://cf2fnyf7gud6c"]
 
 [ext_resource type="Script" path="res://run/levels/player_manager.gd" id="1_hhmm0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kb8qo"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kbpyq"]
 
@@ -9,6 +11,7 @@ script = ExtResource("1_hhmm0")
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(2, 653)
+physics_material_override = SubResource("PhysicsMaterial_kb8qo")
 
 [node name="Limit" type="CollisionShape2D" parent="Floor"]
 shape = SubResource("WorldBoundaryShape2D_kbpyq")

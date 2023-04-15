@@ -2,8 +2,8 @@ class_name Jumper
 extends RigidBody2D
 
 const SPEED = 5.0
-const JUMP_IMPULSE = 4.5
-const MOVE_FORCE = 1
+const JUMP_IMPULSE = 942.5
+const MOVE_FORCE = 1142
 
 # Set by the authority, synchronized on spawn.
 @export var player := 1 :

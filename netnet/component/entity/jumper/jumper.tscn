@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckph60svia3xr"]
+[gd_scene load_steps=8 format=3 uid="uid://ckph60svia3xr"]
 
 [ext_resource type="Script" path="res://component/entity/jumper/jumper.gd" id="1_smoki"]
 [ext_resource type="Texture2D" uid="uid://cojbjngjjhoe0" path="res://component/entity/jumper/green_astronaut.png" id="2_xm8at"]
 [ext_resource type="Script" path="res://component/entity/jumper/jumper_input.gd" id="3_trrhr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vgl4i"]
+friction = 0.5
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_raoy1"]
 radius = 18.0
@@ -22,7 +25,9 @@ properties/0/spawn = false
 properties/0/sync = true
 
 [node name="Jumper" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_vgl4i")
 lock_rotation = true
+linear_damp = 1.0
 script = ExtResource("1_smoki")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
