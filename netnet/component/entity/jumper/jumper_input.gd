@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 
 func _new_direction() -> Vector2:
 	var new_dir := Vector2.ZERO
-	new_dir += _direction_from_axis()
+	#new_dir += _direction_from_axis()
 	new_dir += _direction_from_keys()
 
 	if new_dir == Vector2.ZERO:
