@@ -35,7 +35,6 @@ func _new_direction() -> Vector2:
 		new_dir.x = 0.0
 
 	new_dir.x += Input.get_axis("move_left", "move_right")
-	print(Input.get_axis("move_left", "move_right"))
 
 	if new_dir == Vector2.ZERO:
 		return Vector2.ZERO
