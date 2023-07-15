@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
 		jump.rpc()
 
+
 func _new_direction() -> Vector2:
 	var new_dir := Vector2(Input.get_joy_axis(0, JOY_AXIS_LEFT_X), 0.0)
 	if absf(new_dir.x) < STICK_DEADZONE:
