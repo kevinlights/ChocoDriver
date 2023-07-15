@@ -5,12 +5,15 @@ const SPEED = 5.0
 const JUMP_IMPULSE = 942.5
 const MOVE_FORCE = 1142
 
+@export var skins: Array[Texture2D]
+
 # Set by the authority, synchronized on spawn.
 @export var player := 1 :
 	set(id):
 		player = id
 		# Give authority over the player input to the appropriate peer.
 		$JumperInput.set_multiplayer_authority(id)
+		$Sprite2D.set_texture(skins[2])
 
 # Player synchronized input
 @onready var input: JumperInput = $JumperInput

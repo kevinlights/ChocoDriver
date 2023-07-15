@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckph60svia3xr"]
+[gd_scene load_steps=11 format=3 uid="uid://ckph60svia3xr"]
 
 [ext_resource type="Script" path="res://component/entity/jumper/jumper.gd" id="1_smoki"]
 [ext_resource type="Texture2D" uid="uid://cojbjngjjhoe0" path="res://component/entity/jumper/green_astronaut.png" id="2_xm8at"]
 [ext_resource type="Script" path="res://component/entity/jumper/jumper_input.gd" id="3_trrhr"]
+[ext_resource type="Texture2D" uid="uid://mk8mv84rjsu" path="res://component/entity/jumper/blue_astronaut.png" id="3_wegaa"]
+[ext_resource type="Texture2D" uid="uid://c07f5mop1rm1m" path="res://component/entity/jumper/pink_astronaut.png" id="4_v2rk1"]
+[ext_resource type="Texture2D" uid="uid://b0fdcrrluprxp" path="res://component/entity/jumper/yellow_astronaut.png" id="5_04xut"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vgl4i"]
 friction = 0.5
@@ -32,6 +35,7 @@ physics_material_override = SubResource("PhysicsMaterial_vgl4i")
 lock_rotation = true
 linear_damp = 1.0
 script = ExtResource("1_smoki")
+skins = Array[Texture2D]([ExtResource("2_xm8at"), ExtResource("3_wegaa"), ExtResource("4_v2rk1"), ExtResource("5_04xut")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
