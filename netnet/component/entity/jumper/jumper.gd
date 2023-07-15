@@ -31,6 +31,5 @@ func _physics_process(delta):
 
 	# Handle movement.
 	var direction = input.direction
-	direction.y = 0
 	if direction:
 		apply_force(direction * MOVE_FORCE)

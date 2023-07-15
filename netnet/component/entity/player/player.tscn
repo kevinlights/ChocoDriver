@@ -35,6 +35,8 @@ replication_config = SubResource("SceneReplicationConfig_fb1vy")
 root_path = NodePath(".")
 replication_config = SubResource("SceneReplicationConfig_hoavk")
 script = ExtResource("2_ju3m6")
+jumping = null
+direction = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_37qaq")

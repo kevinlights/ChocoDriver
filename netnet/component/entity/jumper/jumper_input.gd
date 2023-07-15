@@ -1,6 +1,9 @@
 class_name JumperInput
 extends MultiplayerSynchronizer
 
+
+const STICK_DEADZONE: float = 0.5
+
 # Set via RPC to simulate is_action_just_pressed.
 @export var jumping: bool = false
 
@@ -20,7 +23,20 @@ func jump() -> void:
 
 func _process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	if Input.is_action_just_pressed("ui_accept"):
+
+	direction = _new_direction()
+	if Input.is_action_just_pressed("jump"):
 		jump.rpc()
+
+func _new_direction() -> Vector2:
+	var new_dir := Vector2(Input.get_joy_axis(0, JOY_AXIS_LEFT_X), 0.0)
+	if absf(new_dir.x) < STICK_DEADZONE:
+		new_dir.x = 0.0
+
+	new_dir.x += Input.get_axis("move_left", "move_right")
+	print(Input.get_axis("move_left", "move_right"))
+
+	if new_dir == Vector2.ZERO:
+		return Vector2.ZERO
+
+	return new_dir.normalized()
