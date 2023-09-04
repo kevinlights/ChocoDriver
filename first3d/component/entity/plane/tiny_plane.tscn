@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dao17ylietgyl"]
+
+[ext_resource type="PackedScene" uid="uid://bnopi1rerk2hw" path="res://component/entity/plane/TinyPlane.glb" id="1_umuah"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_08gtm"]
+size = Vector3(1.551, 1.1, 4.211)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w478f"]
+size = Vector3(5.20238, 0.197845, 1)
+
+[node name="TinyPlane" type="RigidBody3D"]
+
+[node name="TinyPlane" parent="." instance=ExtResource("1_umuah")]
+
+[node name="Core" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0.888)
+shape = SubResource("BoxShape3D_08gtm")
+
+[node name="Wings" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.599034, 0.693509)
+shape = SubResource("BoxShape3D_w478f")
