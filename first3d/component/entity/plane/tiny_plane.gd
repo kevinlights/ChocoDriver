@@ -26,8 +26,10 @@ func trigger_direction(dir: Vector2) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	apply_torque(transform * Vector3(target_pitch, 0.0, target_torque))
-	apply_central_force(transform * target_thrust)
+	var torque: Vector3 = transform.basis * Vector3(target_pitch, 0.0, target_torque)
+	var force: Vector3 = transform.basis * target_thrust
+	apply_torque(torque)
+	apply_central_force(force)
 
 
 func _on_dir_changed(dir: Vector2) -> void:
