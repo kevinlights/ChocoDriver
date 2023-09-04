@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://7ivipmwaw24t"]
+[gd_scene load_steps=6 format=3 uid="uid://7ivipmwaw24t"]
 
 [ext_resource type="PackedScene" uid="uid://b10k58capm04o" path="res://component/entity/walker/walker.tscn" id="1_x0026"]
+[ext_resource type="PackedScene" uid="uid://bk0s5bn8k08bc" path="res://flow/control/local_input/local_input.tscn" id="2_0i5t8"]
 [ext_resource type="PackedScene" uid="uid://bcpri2x5afoyb" path="res://component/entity/box/box.tscn" id="2_e8xto"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2xulb"]
@@ -32,6 +33,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 9, 0)
 [node name="CameraPlayer" type="Camera3D" parent="MainWalker"]
 transform = Transform3D(1, 0, 0, 0, 0.944949, 0.327218, 0, -0.327218, 0.944949, 0, 2.18524, 3.2779)
 
+[node name="Control" parent="MainWalker" instance=ExtResource("2_0i5t8")]
+
 [node name="NpcWalker1" parent="." instance=ExtResource("1_x0026")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0621, 6.0173, -4.87909)
 
@@ -43,3 +46,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2632, -0.5, -7.95074)
 
 [node name="Box3" parent="." instance=ExtResource("2_e8xto")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.53697, 1.42774, -11.1883)
+
+[connection signal="dir_changed" from="MainWalker/Control" to="MainWalker" method="_on_dir_changed"]
+[connection signal="main_action" from="MainWalker/Control" to="MainWalker" method="_on_main_action"]

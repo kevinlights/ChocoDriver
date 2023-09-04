@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk0s5bn8k08bc"]
+
+[ext_resource type="Script" path="res://flow/control/local_input/local_input.gd" id="1_4sevn"]
+
+[node name="Control" type="Node"]
+script = ExtResource("1_4sevn")
