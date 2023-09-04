@@ -7,6 +7,7 @@
 
 [sub_resource type="QuadMesh" id="QuadMesh_dt8nl"]
 size = Vector2(500, 500)
+orientation = 1
 
 [node name="InfiniteLevel" type="Node3D"]
 
@@ -18,7 +19,7 @@ collision_mask = 0
 shape = SubResource("WorldBoundaryShape3D_2xulb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, -0.00429347, 0.999991, 0, -0.999991, -0.00429347, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("QuadMesh_dt8nl")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
