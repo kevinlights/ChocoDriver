@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://7ivipmwaw24t"]
+[gd_scene load_steps=5 format=3 uid="uid://7ivipmwaw24t"]
 
 [ext_resource type="PackedScene" uid="uid://b10k58capm04o" path="res://component/entity/walker/walker.tscn" id="1_x0026"]
+[ext_resource type="PackedScene" uid="uid://bcpri2x5afoyb" path="res://component/entity/box.tscn" id="2_e8xto"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2xulb"]
 
@@ -32,3 +33,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0621, 6.0173, -4.87909)
 
 [node name="CameraPlayer" type="Camera3D" parent="."]
 transform = Transform3D(0.800533, -0.194387, 0.566887, 0, 0.945933, 0.324363, -0.599289, -0.259663, 0.75725, 1.84912, 10.9771, 7.9188)
+
+[node name="Box1" parent="." instance=ExtResource("2_e8xto")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="Box2" parent="." instance=ExtResource("2_e8xto")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2632, -0.5, -7.95074)
+
+[node name="Box3" parent="." instance=ExtResource("2_e8xto")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.53697, 1.42774, -11.1883)
