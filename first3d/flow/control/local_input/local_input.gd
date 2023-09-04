@@ -9,5 +9,5 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump"):
 		main_action.emit()
 	elif event is InputEventJoypadMotion:
-		var dir: Vector2 = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+		var dir: Vector2 = Input.get_vector("move_left", "move_right", "move_back", "move_forward")
 		dir_changed.emit(dir)

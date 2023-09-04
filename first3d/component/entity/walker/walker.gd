@@ -23,7 +23,7 @@ func trigger_direction(dir: Vector2) -> void:
 	target_rotation = -dir.x * turn_to_rad
 	var ground_velocity: Vector2 = Vector2.UP.rotated(global_rotation.y) * dir.y * speed
 	target_velocity.x = ground_velocity.x
-	target_velocity.z = -ground_velocity.y
+	target_velocity.z = ground_velocity.y
 
 
 func _physics_process(delta: float) -> void:
