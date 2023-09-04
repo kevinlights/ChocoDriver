@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://bcpri2x5afoyb"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_rcscr"]
+[ext_resource type="PackedScene" uid="uid://bii08dedmqwkm" path="res://component/entity/box/CubeContainer.glb" id="1_bky5n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v0rct"]
 
 [node name="Box" type="StaticBody3D"]
 collision_mask = 0
 
-[node name="Skin" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_rcscr")
-
 [node name="Shape" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_v0rct")
+
+[node name="CubeContainer" parent="." instance=ExtResource("1_bky5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
