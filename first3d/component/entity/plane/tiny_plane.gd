@@ -1,9 +1,10 @@
 class_name TinyPlane
 extends RigidBody3D
 
-@export var thrust_power: float = 14000.0
+@export var thrust_power: float = 10000.0
 @export var turn_to_torque: float = 2000.0
-@export var move_to_pitch: float = 2000.0
+@export var move_to_pitch: float = 4000.0
+@export var lift: float = 10000.0
 
 var target_torque: float = 0.0
 var target_pitch: float = 0.0
@@ -12,7 +13,7 @@ var target_thrust := Vector3.ZERO
 
 
 func trigger_thrust() -> void:
-	target_thrust = Vector3.FORWARD * thrust_power
+	target_thrust = Vector3.FORWARD * thrust_power + Vector3.UP * lift
 
 
 func trigger_direction(dir: Vector2) -> void:
@@ -23,7 +24,7 @@ func trigger_direction(dir: Vector2) -> void:
 
 func _physics_process(delta: float) -> void:
 	apply_torque(transform * Vector3(target_pitch, 0.0, target_torque))
-	apply_central_force(target_thrust)
+	apply_central_force(transform * target_thrust)
 
 
 func _on_dir_changed(dir: Vector2) -> void:
@@ -31,5 +32,4 @@ func _on_dir_changed(dir: Vector2) -> void:
 
 
 func _on_main_action() -> void:
-	print("Thrust !")
 	trigger_thrust()
