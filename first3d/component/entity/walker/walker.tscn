@@ -1,20 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://b10k58capm04o"]
 
 [ext_resource type="Script" path="res://component/entity/walker/walker.gd" id="1_xg6by"]
+[ext_resource type="PackedScene" uid="uid://bt8on6t7lqtrt" path="res://component/entity/walker/BasicPlayer.glb" id="2_p2xjj"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_skhap"]
-radial_segments = 8
-rings = 4
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4r1ky"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_6q2sk"]
+size = Vector3(0.56, 0.8, 0.4)
 
 [node name="Walker" type="CharacterBody3D"]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_xg6by")
 
-[node name="Skin" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_skhap")
+[node name="BasicPlayer" parent="." instance=ExtResource("2_p2xjj")]
 
 [node name="Shape" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_4r1ky")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("BoxShape3D_6q2sk")
