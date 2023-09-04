@@ -28,11 +28,11 @@ shadow_enabled = true
 [node name="MainWalker" parent="." instance=ExtResource("1_x0026")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 9, 0)
 
+[node name="CameraPlayer" type="Camera3D" parent="MainWalker"]
+transform = Transform3D(1, 0, 0, 0, 0.944949, 0.327218, 0, -0.327218, 0.944949, 0, 2.18524, 3.2779)
+
 [node name="NpcWalker1" parent="." instance=ExtResource("1_x0026")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0621, 6.0173, -4.87909)
-
-[node name="CameraPlayer" type="Camera3D" parent="."]
-transform = Transform3D(0.800533, -0.194387, 0.566887, 0, 0.945933, 0.324363, -0.599289, -0.259663, 0.75725, 1.84912, 10.9771, 7.9188)
 
 [node name="Box1" parent="." instance=ExtResource("2_e8xto")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
