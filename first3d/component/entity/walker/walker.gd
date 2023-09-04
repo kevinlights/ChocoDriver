@@ -12,21 +12,11 @@ var target_velocity = Vector3.ZERO
 func _physics_process(delta: float) -> void:
 	var direction = Vector3.ZERO
 
-	if Input.is_action_pressed("move_right"):
-		direction.x += 1
-	if Input.is_action_pressed("move_left"):
-		direction.x -= 1
-	if Input.is_action_pressed("move_back"):
-		direction.z += 1
-	if Input.is_action_pressed("move_forward"):
-		direction.z -= 1
-
-	if direction != Vector3.ZERO:
-		direction = direction.normalized()
+	var ground_velocity: Vector2 = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 
 	# Ground Velocity
-	target_velocity.x = direction.x * speed
-	target_velocity.z = direction.z * speed
+	target_velocity.x = ground_velocity.x * speed
+	target_velocity.z = ground_velocity.y * speed
 
 	# Vertical Velocity
 	if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
