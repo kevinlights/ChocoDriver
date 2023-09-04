@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b10k58capm04o"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_skhap"]
+radial_segments = 8
+rings = 4
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4r1ky"]
+
+[node name="Walker" type="CharacterBody3D"]
+
+[node name="Skin" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_skhap")
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_4r1ky")
