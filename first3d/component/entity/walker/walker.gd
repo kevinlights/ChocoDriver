@@ -3,12 +3,15 @@ extends CharacterBody3D
 
 # How fast the player moves in meters per second.
 @export var speed = 14
+# Convert an axis from [-1, -1] to rad
+@export var turn_to_rad: float = 0.020
 # The downward acceleration when in the air, in meters per second squared.
 @export var fall_acceleration = 75
 # Vertical impulse applied to the character upon jumping in meters per second.
 @export var jump_impulse = 20
 
-var target_velocity = Vector3.ZERO
+var target_velocity := Vector3.ZERO
+var target_rotation: float = 0.0
 
 
 func trigger_jump() -> void:
@@ -17,11 +20,15 @@ func trigger_jump() -> void:
 
 
 func trigger_direction(dir: Vector2) -> void:
-	target_velocity.x = dir.x * speed
-	target_velocity.z = dir.y * speed
+	target_rotation = -dir.x * turn_to_rad
+	var ground_velocity: Vector2 = Vector2.UP.rotated(global_rotation.y) * dir.y * speed
+	target_velocity.x = ground_velocity.x
+	target_velocity.z = -ground_velocity.y
 
 
 func _physics_process(delta: float) -> void:
+	rotate_y(target_rotation)
+
 	# Gravity
 	if not is_on_floor():
 		target_velocity.y = target_velocity.y - (fall_acceleration * delta)
