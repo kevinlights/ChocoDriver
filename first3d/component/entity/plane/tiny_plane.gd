@@ -12,8 +12,11 @@ var target_rotation := Vector3.ZERO
 var target_thrust := Vector3.ZERO
 
 
-func trigger_thrust() -> void:
-	target_thrust = Vector3.FORWARD * thrust_power + Vector3.UP * lift
+func trigger_thrust(activate: bool) -> void:
+	if activate:
+		target_thrust = Vector3.FORWARD * thrust_power + Vector3.UP * lift
+	else:
+		target_thrust = Vector3.ZERO
 
 
 func trigger_direction(dir: Vector2) -> void:
@@ -31,5 +34,5 @@ func _on_dir_changed(dir: Vector2) -> void:
 	trigger_direction(dir)
 
 
-func _on_main_action() -> void:
-	trigger_thrust()
+func _on_main_action(pressed: bool) -> void:
+	trigger_thrust(pressed)

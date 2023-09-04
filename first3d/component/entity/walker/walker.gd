@@ -42,5 +42,6 @@ func _on_dir_changed(dir: Vector2) -> void:
 	trigger_direction(dir)
 
 
-func _on_main_action() -> void:
-	trigger_jump()
+func _on_main_action(pressed: bool) -> void:
+	if pressed:
+		trigger_jump()
