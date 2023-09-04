@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://7ivipmwaw24t"]
+[gd_scene load_steps=3 format=3 uid="uid://7ivipmwaw24t"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_2xulb"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_dt8nl"]
+size = Vector2(500, 500)
 
 [node name="InfiniteLevel" type="Node3D"]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="InfinitePlan" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("WorldBoundaryShape3D_2xulb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, -0.00429347, 0.999991, 0, -0.999991, -0.00429347, 0, 0, 0)
+mesh = SubResource("QuadMesh_dt8nl")
