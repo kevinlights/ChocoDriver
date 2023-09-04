@@ -9,6 +9,8 @@ rings = 4
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4r1ky"]
 
 [node name="Walker" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_xg6by")
 
 [node name="Skin" type="MeshInstance3D" parent="."]

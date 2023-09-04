@@ -11,6 +11,7 @@ size = Vector2(500, 500)
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+collision_mask = 0
 
 [node name="InfinitePlan" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("WorldBoundaryShape3D_2xulb")
