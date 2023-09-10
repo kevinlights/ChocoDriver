@@ -11,6 +11,8 @@ var target_pitch: float = 0.0
 var target_rotation := Vector3.ZERO
 var target_thrust := Vector3.ZERO
 
+var _current_commander: LocalInput = null
+
 
 func trigger_thrust(activate: bool) -> void:
 	if activate:
@@ -22,6 +24,18 @@ func trigger_thrust(activate: bool) -> void:
 func trigger_direction(dir: Vector2) -> void:
 	target_torque = -dir.x * turn_to_torque
 	target_pitch = -dir.y * move_to_pitch
+
+
+## Make the vehicle responds to driver commands
+func drive_with(commander: LocalInput) -> void:
+	commander.dir_changed.connect(_on_dir_changed)
+	commander.main_action.connect(_on_main_action)
+	_current_commander = commander
+
+
+func get_out() -> void:
+	_current_commander.dir_changed.disconnect(_on_dir_changed)
+	_current_commander.main_action.disconnect(_on_main_action)
 
 
 func _physics_process(delta: float) -> void:

@@ -13,9 +13,10 @@ size = Vector3(5.20238, 0.197845, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_stelr"]
 size = Vector3(1, 0.39856, 3.06068)
 
-[node name="TinyPlane" type="RigidBody3D"]
+[node name="TinyPlane" type="RigidBody3D" groups=["vehicle"]]
 collision_layer = 8
 collision_mask = 3
+input_ray_pickable = false
 mass = 750.0
 script = ExtResource("1_q8t3a")
 
