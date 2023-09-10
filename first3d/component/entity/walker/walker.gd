@@ -96,7 +96,12 @@ func _get_out_vehicle() -> void:
 	remove_collision_exception_with(_vehicle)
 	reparent(_vehicle.get_parent())
 	_vehicle = null
-	# Not implemented yet
+	_get_head_up()
+
+
+## Make the player stand up
+func _get_head_up():
+	set_rotation(Vector3(0.0, rotation.y, 0.0))
 
 
 ## Return closest vehicle within reach
