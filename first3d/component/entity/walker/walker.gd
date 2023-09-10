@@ -37,6 +37,13 @@ func is_onboard() -> bool:
 
 
 func _physics_process(delta: float) -> void:
+	if is_onboard():
+		_get_on_driver_seat()
+	else:
+		_move_with_feet(delta)
+
+
+func _move_with_feet(delta: float):
 	rotate_y(target_rotation)
 
 	# Gravity
@@ -46,6 +53,10 @@ func _physics_process(delta: float) -> void:
 	# Moving the Character
 	velocity = target_velocity
 	move_and_slide()
+
+
+func _get_on_driver_seat() -> void:
+	pass # Not implemented yet
 
 
 func _on_dir_changed(dir: Vector2) -> void:

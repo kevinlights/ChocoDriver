@@ -54,7 +54,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.53697, 1.42774, -11.1883)
 transform = Transform3D(0.477312, 0.527326, -0.702923, -0.741391, 0.671074, 0, 0.471713, 0.521141, 0.711266, -76.6685, 15.7672, 53.8067)
 
 [node name="TinyPlane2" parent="." instance=ExtResource("4_tbpfc")]
-transform = Transform3D(0.477312, 0.527326, -0.702923, -0.741391, 0.671074, 0, 0.471713, 0.521141, 0.711266, -7.92225, 3.94108, -6.48481)
+transform = Transform3D(-0.589079, -0.650805, -0.478999, -0.741391, 0.671074, 1.34747e-08, 0.321443, 0.355125, -0.877816, -10.5959, 3.94108, -6.48481)
 
 [connection signal="dir_changed" from="MainWalker/Control" to="MainWalker" method="_on_dir_changed"]
 [connection signal="get_in_action" from="MainWalker/Control" to="MainWalker" method="_on_get_in_action"]
