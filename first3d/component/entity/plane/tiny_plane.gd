@@ -20,7 +20,6 @@ func trigger_thrust(activate: bool) -> void:
 
 
 func trigger_direction(dir: Vector2) -> void:
-	print(dir)
 	target_torque = -dir.x * turn_to_torque
 	target_pitch = -dir.y * move_to_pitch
 
