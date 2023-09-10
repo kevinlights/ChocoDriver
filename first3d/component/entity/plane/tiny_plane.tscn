@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dao17ylietgyl"]
+[gd_scene load_steps=6 format=3 uid="uid://dao17ylietgyl"]
 
 [ext_resource type="Script" path="res://component/entity/plane/tiny_plane.gd" id="1_q8t3a"]
 [ext_resource type="PackedScene" uid="uid://bnopi1rerk2hw" path="res://component/entity/plane/TinyPlane.glb" id="1_umuah"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m4n1f"]
+radius = 0.38
 height = 4.37708
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w478f"]
 size = Vector3(5.20238, 0.197845, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_stelr"]
+size = Vector3(1, 0.39856, 3.06068)
 
 [node name="TinyPlane" type="RigidBody3D"]
 collision_layer = 8
@@ -18,9 +22,13 @@ script = ExtResource("1_q8t3a")
 [node name="TinyPlane" parent="." instance=ExtResource("1_umuah")]
 
 [node name="Core" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.497537, 1.18529)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.613223, 1.23028)
 shape = SubResource("CapsuleShape3D_m4n1f")
 
 [node name="Wings" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.599034, 0.693509)
 shape = SubResource("BoxShape3D_w478f")
+
+[node name="Bottom" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.192811, 0.0385618)
+shape = SubResource("BoxShape3D_stelr")
