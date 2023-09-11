@@ -32,6 +32,8 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 0.944949, 0.327218, 0, -0.327218, 0.944949, -10, 11.1852, 3.2779)
 current = true
 script = ExtResource("1_qdm47")
+max_distance = 6.0
+camera_height = 2.0
 
 [node name="MainWalker" parent="." instance=ExtResource("1_x0026")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 9, 0)
