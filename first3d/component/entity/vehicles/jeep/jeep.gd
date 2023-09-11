@@ -1,6 +1,6 @@
 extends VehicleBody3D
 
-@onready var max_engine_force: float = 50
+@onready var max_engine_force: float = 500
 @onready var max_steering: float = PI / 6.0 # degrees
 
 var _current_commander: LocalInput = null
@@ -23,7 +23,6 @@ func get_out() -> void:
 
 
 func _on_dir_changed(dir: Vector2) -> void:
-	print(dir)
 	steer(-dir.x)
 
 
