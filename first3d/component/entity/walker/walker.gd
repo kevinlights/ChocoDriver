@@ -1,6 +1,9 @@
 class_name Walker
 extends CharacterBody3D
 
+
+signal focus_required(me: Node3D)
+
 ## How fast the player moves in meters per second.
 @export var speed = 14
 ## Convert an axis from [-1, -1] to rad
@@ -16,6 +19,10 @@ var target_rotation: float = 0.0
 var _vehicle: Node3D = null
 
 @onready var _vehicle_range: RayCast3D = $VehicleRange
+
+
+func _ready() -> void:
+	focus_required.emit(self)
 
 
 ## Jump if is on floor
