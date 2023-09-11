@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj5dmtqadl5nf"]
+[gd_scene load_steps=6 format=3 uid="uid://cj5dmtqadl5nf"]
 
 [ext_resource type="Script" path="res://component/entity/vehicles/jeep/jeep.gd" id="1_fjw46"]
 [ext_resource type="PackedScene" uid="uid://dlaj4npd144qd" path="res://component/entity/vehicles/jeep/OrangeJeep_noWheel.glb" id="1_qgclq"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1maan"]
 size = Vector3(1, 0.769157, 3.09562)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f6lpk"]
+size = Vector3(0.3, 0.3, 0.3)
 
 [node name="Jeep" type="VehicleBody3D" groups=["vehicle"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.623038, 0)
@@ -32,6 +35,10 @@ suspension_stiffness = 50.0
 [node name="OrangeJeep_wheel" parent="FrontRightWheel" instance=ExtResource("2_f6y5a")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FrontRightWheel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165207, 0, 0)
+mesh = SubResource("BoxMesh_f6lpk")
+
 [node name="FrontLeftWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.2, 1)
 use_as_steering = true
@@ -41,6 +48,10 @@ wheel_friction_slip = 1.0
 suspension_stiffness = 50.0
 
 [node name="OrangeJeep_wheel" parent="FrontLeftWheel" instance=ExtResource("2_f6y5a")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FrontLeftWheel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154773, 0, 0)
+mesh = SubResource("BoxMesh_f6lpk")
 
 [node name="RearLeftWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.2, -1.01869)
@@ -52,6 +63,10 @@ suspension_stiffness = 50.0
 
 [node name="OrangeJeep_wheel" parent="RearLeftWheel" instance=ExtResource("2_f6y5a")]
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RearLeftWheel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.173029, 0, 0)
+mesh = SubResource("BoxMesh_f6lpk")
+
 [node name="RearRightWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.2, -1.019)
 wheel_roll_influence = 0.4
@@ -60,3 +75,7 @@ wheel_friction_slip = 1.0
 suspension_stiffness = 50.0
 
 [node name="OrangeJeep_wheel" parent="RearRightWheel" instance=ExtResource("2_f6y5a")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RearRightWheel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.183984, 0, 0)
+mesh = SubResource("BoxMesh_f6lpk")
