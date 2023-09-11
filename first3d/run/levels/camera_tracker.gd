@@ -24,9 +24,7 @@ func _process(_delta: float) -> void:
 func _adjust_distance() -> void:
 	var target: Vector3 = _tracked_node.get_global_position()
 	var current_distance: float = position.distance_to(target)
-	print("From ", position, " to ", target, ", there are ", current_distance, "m")
 	if current_distance > _max_distance:
-		print(current_distance, " is above ", _max_distance)
 		var diff: float = current_distance - _max_distance
 		set_position(position + transform.basis * Vector3.FORWARD * diff)
 
