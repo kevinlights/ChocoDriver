@@ -30,7 +30,10 @@ use_as_steering = true
 wheel_roll_influence = 0.4
 wheel_radius = 0.3
 wheel_friction_slip = 1.0
+suspension_travel = 0.6
 suspension_stiffness = 50.0
+damping_compression = 0.3
+damping_relaxation = 0.5
 
 [node name="OrangeJeep_wheel" parent="FrontRightWheel" instance=ExtResource("2_f6y5a")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -45,7 +48,10 @@ use_as_steering = true
 wheel_roll_influence = 0.4
 wheel_radius = 0.3
 wheel_friction_slip = 1.0
+suspension_travel = 0.6
 suspension_stiffness = 50.0
+damping_compression = 0.3
+damping_relaxation = 0.5
 
 [node name="OrangeJeep_wheel" parent="FrontLeftWheel" instance=ExtResource("2_f6y5a")]
 
@@ -59,7 +65,10 @@ use_as_traction = true
 wheel_roll_influence = 0.4
 wheel_radius = 0.3
 wheel_friction_slip = 1.0
+suspension_travel = 0.6
 suspension_stiffness = 50.0
+damping_compression = 0.3
+damping_relaxation = 0.5
 
 [node name="OrangeJeep_wheel" parent="RearLeftWheel" instance=ExtResource("2_f6y5a")]
 
@@ -72,7 +81,10 @@ transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.2, -1.019)
 wheel_roll_influence = 0.4
 wheel_radius = 0.3
 wheel_friction_slip = 1.0
+suspension_travel = 0.6
 suspension_stiffness = 50.0
+damping_compression = 0.3
+damping_relaxation = 0.5
 
 [node name="OrangeJeep_wheel" parent="RearRightWheel" instance=ExtResource("2_f6y5a")]
 
