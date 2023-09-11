@@ -7,48 +7,51 @@
 size = Vector3(1, 0.769157, 3.09562)
 
 [node name="Jeep" type="VehicleBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25362, 0)
 collision_layer = 8
 collision_mask = 11
-mass = 500.0
-engine_force = 43.42
-steering = -0.253945
+mass = 400.0
 
 [node name="OrangeJeep_noWheel" parent="." instance=ExtResource("1_qgclq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925237, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925237, 0.00334018)
 shape = SubResource("BoxShape3D_1maan")
 
 [node name="FrontRightWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.2, 1)
-steering = -0.253945
 use_as_steering = true
+wheel_roll_influence = 0.4
 wheel_radius = 0.3
+suspension_stiffness = 50.0
 
 [node name="OrangeJeep_wheel" parent="FrontRightWheel" instance=ExtResource("2_f6y5a")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="FrontLeftWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.2, 1)
-steering = -0.253945
 use_as_steering = true
+wheel_roll_influence = 0.4
 wheel_radius = 0.3
+suspension_stiffness = 50.0
 
 [node name="OrangeJeep_wheel" parent="FrontLeftWheel" instance=ExtResource("2_f6y5a")]
 
 [node name="RearLeftWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.2, -1.01869)
-engine_force = 43.42
 use_as_traction = true
+wheel_roll_influence = 0.4
 wheel_radius = 0.3
+suspension_stiffness = 50.0
 
 [node name="OrangeJeep_wheel" parent="RearLeftWheel" instance=ExtResource("2_f6y5a")]
 
 [node name="RearRightWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.2, -1.019)
-engine_force = 43.42
 use_as_traction = true
+wheel_roll_influence = 0.4
 wheel_radius = 0.3
+suspension_stiffness = 50.0
 
 [node name="OrangeJeep_wheel" parent="RearRightWheel" instance=ExtResource("2_f6y5a")]
