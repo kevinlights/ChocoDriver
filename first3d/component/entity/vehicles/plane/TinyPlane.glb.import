@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bnopi1rerk2hw"
-path="res://.godot/imported/TinyPlane.glb-8622d1058a6fb00cd6f85d1a0dbffb8c.scn"
+path="res://.godot/imported/TinyPlane.glb-5fc1ae52c86229b9eb034095c1a69ff6.scn"
 
 [deps]
 
-source_file="res://component/entity/plane/TinyPlane.glb"
-dest_files=["res://.godot/imported/TinyPlane.glb-8622d1058a6fb00cd6f85d1a0dbffb8c.scn"]
+source_file="res://component/entity/vehicles/plane/TinyPlane.glb"
+dest_files=["res://.godot/imported/TinyPlane.glb-5fc1ae52c86229b9eb034095c1a69ff6.scn"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dao17ylietgyl"]
 
-[ext_resource type="Script" path="res://component/entity/plane/tiny_plane.gd" id="1_q8t3a"]
-[ext_resource type="PackedScene" uid="uid://bnopi1rerk2hw" path="res://component/entity/plane/TinyPlane.glb" id="1_umuah"]
+[ext_resource type="Script" path="res://component/entity/vehicles/plane/tiny_plane.gd" id="1_tviov"]
+[ext_resource type="PackedScene" uid="uid://bnopi1rerk2hw" path="res://component/entity/vehicles/plane/TinyPlane.glb" id="2_60pln"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m4n1f"]
 radius = 0.38
@@ -18,9 +18,9 @@ collision_layer = 8
 collision_mask = 3
 input_ray_pickable = false
 mass = 750.0
-script = ExtResource("1_q8t3a")
+script = ExtResource("1_tviov")
 
-[node name="TinyPlane" parent="." instance=ExtResource("1_umuah")]
+[node name="TinyPlane" parent="." instance=ExtResource("2_60pln")]
 
 [node name="Core" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.613223, 1.23028)
