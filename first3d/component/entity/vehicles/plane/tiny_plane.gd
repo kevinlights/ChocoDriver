@@ -39,9 +39,17 @@ func get_out() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	_apply_plane_rotation()
+	_apply_plane_thrust()
+
+
+func _apply_plane_rotation() -> void:
 	var torque: Vector3 = transform.basis * Vector3(target_pitch, 0.0, target_torque)
-	var force: Vector3 = transform.basis * target_thrust
 	apply_torque(torque)
+
+
+func _apply_plane_thrust() -> void:
+	var force: Vector3 = transform.basis * target_thrust
 	apply_central_force(force)
 
 
