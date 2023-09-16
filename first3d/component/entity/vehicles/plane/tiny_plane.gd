@@ -4,7 +4,7 @@ extends RigidBody3D
 @export var thrust_power: float = 10000.0
 @export var turn_to_torque: float = 2000.0
 @export var move_to_pitch: float = 4000.0
-@export var lift: float = 10000.0
+@export var wing_resistance: float = 10.0
 
 var target_torque: float = 0.0
 var target_pitch: float = 0.0
@@ -16,7 +16,7 @@ var _current_commander: LocalInput = null
 
 func trigger_thrust(activate: bool) -> void:
 	if activate:
-		target_thrust = Vector3.FORWARD * thrust_power + Vector3.UP * lift
+		target_thrust = Vector3.FORWARD * thrust_power + Vector3.UP * thrust_power
 	else:
 		target_thrust = Vector3.ZERO
 
@@ -41,6 +41,7 @@ func get_out() -> void:
 func _physics_process(delta: float) -> void:
 	_apply_plane_rotation()
 	_apply_plane_thrust()
+	_apply_wing_resistance()
 
 
 func _apply_plane_rotation() -> void:
@@ -51,6 +52,18 @@ func _apply_plane_rotation() -> void:
 func _apply_plane_thrust() -> void:
 	var force: Vector3 = transform.basis * target_thrust
 	apply_central_force(force)
+
+
+func _apply_wing_resistance() -> void:
+	var vertical_speed = linear_velocity.dot(transform.basis * Vector3.UP)
+	var local_wing_force = Vector3.UP * -wing_resistance * vertical_speed
+	var wing_force = transform.basis * local_wing_force
+	if _current_commander != null:
+		print("- - -")
+		print("Vertical speed : ", vertical_speed)
+		print("Wing force local :", local_wing_force)
+		print("Wing force : ", wing_force)
+	apply_central_force(wing_force)
 
 
 func _on_dir_changed(dir: Vector2) -> void:
