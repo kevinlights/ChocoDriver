@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://7ivipmwaw24t"]
+[gd_scene load_steps=11 format=3 uid="uid://7ivipmwaw24t"]
 
+[ext_resource type="Texture2D" uid="uid://cgwafs6ukpm7y" path="res://component/entity/ground/ground051.jpg" id="1_3ytcp"]
 [ext_resource type="Script" path="res://run/levels/camera_tracker.gd" id="1_qdm47"]
 [ext_resource type="PackedScene" uid="uid://b10k58capm04o" path="res://component/entity/walker/walker.tscn" id="1_x0026"]
 [ext_resource type="PackedScene" uid="uid://bk0s5bn8k08bc" path="res://flow/control/local_input/local_input.tscn" id="2_0i5t8"]
@@ -10,7 +11,14 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_ctk0t"]
 size = Vector3(500, 10, 500)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ot7iy"]
+albedo_texture = ExtResource("1_3ytcp")
+subsurf_scatter_strength = 0.73
+grow_amount = 0.352
+point_size = 55.9
+
 [sub_resource type="QuadMesh" id="QuadMesh_dt8nl"]
+material = SubResource("StandardMaterial3D_ot7iy")
 size = Vector2(500, 500)
 orientation = 1
 
