@@ -76,7 +76,9 @@ func _get_on_driver_seat() -> void:
 		_seat = null
 		return
 
-	set_rotation(_seat.get_rotation())
+	var rotation_tween: Tween = create_tween()
+	rotation_tween.tween_property(self, "quaternion", _seat.quaternion, seat_rotation_duration)
+
 	var local_velocity = (_seat.position - position).normalized() * seat_access_speed
 	velocity = get_parent().get_transform().basis * local_velocity
 	print("- I'm at ", position, ", going to ", _seat.position, " with speed ", velocity)
