@@ -40,6 +40,10 @@ func get_out() -> void:
 	_current_commander = null
 
 
+func get_free_seat() -> Node3D:
+	return $DrivingSeat
+
+
 func _physics_process(delta: float) -> void:
 	_apply_plane_rotation()
 	_apply_plane_thrust()
