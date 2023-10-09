@@ -20,6 +20,7 @@ func drive_with(commander: LocalInput) -> void:
 func get_out() -> void:
 	_current_commander.dir_changed.disconnect(_on_dir_changed)
 	_current_commander.main_action.disconnect(_on_main_action)
+	_current_commander = null
 
 
 func get_free_seat() -> Node3D:
