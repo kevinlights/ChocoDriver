@@ -25,7 +25,6 @@ func _ready() -> void:
 	focus_required.emit(self)
 
 
-## Jump if is on floor
 func trigger_jump() -> void:
 	if is_on_floor():
 		target_velocity.y = jump_impulse
