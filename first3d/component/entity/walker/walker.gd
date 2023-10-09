@@ -17,6 +17,7 @@ var target_velocity := Vector3.ZERO
 var target_rotation: float = 0.0
 
 var _vehicle: Node3D = null
+var _seat: Node3D = null
 
 @onready var _vehicle_range: RayCast3D = $VehicleRange
 
@@ -62,7 +63,15 @@ func _move_with_feet(delta: float):
 
 
 func _get_on_driver_seat() -> void:
-	pass # Not implemented yet
+	if _seat == null :
+		return
+
+	if position.distance_squared_to(_seat.position) < 1.0:
+		return
+
+	velocity = _seat.position - position
+	velocity *= 0.05 / velocity.length()
+	move_and_slide()
 
 
 func _on_dir_changed(dir: Vector2) -> void:
@@ -94,6 +103,7 @@ func _get_in_vehicle(commander: LocalInput) -> void:
 	reparent(_vehicle)
 	add_collision_exception_with(_vehicle)
 	_vehicle.drive_with(commander)
+	_seat = _find_seat_on(_vehicle)
 
 
 ## Get out of the current vehicle
@@ -102,6 +112,7 @@ func _get_out_vehicle() -> void:
 	remove_collision_exception_with(_vehicle)
 	reparent(_vehicle.get_parent())
 	_vehicle = null
+	_seat = null
 	_get_head_up()
 
 
@@ -125,4 +136,13 @@ func _get_closest_vehicle() -> Node3D:
 			return node_within_range
 
 	print("No vehicle found")
+	return null
+
+
+## Have a seat on the driven vehicle if a seat
+## is available
+func _find_seat_on(vehicule: Node3D) -> Node3D:
+	if vehicule.has_method("get_free_seat") :
+		return vehicule.get_free_seat()
+
 	return null

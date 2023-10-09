@@ -22,6 +22,10 @@ func get_out() -> void:
 	_current_commander.main_action.disconnect(_on_main_action)
 
 
+func get_free_seat() -> Node3D:
+	return %RearSeat
+
+
 func _on_dir_changed(dir: Vector2) -> void:
 	steer(-dir.x)
 
