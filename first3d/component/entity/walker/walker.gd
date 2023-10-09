@@ -13,6 +13,11 @@ signal focus_required(me: Node3D)
 ## Vertical impulse applied to the character upon jumping in meters per second.
 @export var jump_impulse = 20
 
+@export_group("Seat", "seat_")
+@export var seat_min_dist: float = 0.0005
+@export var seat_access_speed: float = 2.0
+@export var seat_rotation_duration: float = 1.0
+
 var target_velocity := Vector3.ZERO
 var target_rotation: float = 0.0
 
@@ -66,13 +71,13 @@ func _get_on_driver_seat() -> void:
 	if _seat == null :
 		return
 
-	if position.distance_squared_to(_seat.position) < 0.05:
+	if position.distance_squared_to(_seat.position) < seat_min_dist:
 		print("Seat reachead at ", _seat.position)
 		_seat = null
 		return
 
 	set_rotation(_seat.get_rotation())
-	var local_velocity = (_seat.position - position).normalized() * 0.90
+	var local_velocity = (_seat.position - position).normalized() * seat_access_speed
 	velocity = get_parent().get_transform().basis * local_velocity
 	print("- I'm at ", position, ", going to ", _seat.position, " with speed ", velocity)
 	move_and_slide()
