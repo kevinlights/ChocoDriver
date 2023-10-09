@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://531sehq2rc2y"]
+
+[ext_resource type="Texture2D" uid="uid://cgwafs6ukpm7y" path="res://component/entity/ground/ground051.jpg" id="1_4htd0"]
+[ext_resource type="Script" path="res://run/levels/camera_tracker.gd" id="2_gxt8l"]
+[ext_resource type="PackedScene" uid="uid://dao17ylietgyl" path="res://component/entity/vehicles/plane/tiny_plane.tscn" id="6_2gcd8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ctk0t"]
+size = Vector3(500, 10, 500)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ot7iy"]
+albedo_texture = ExtResource("1_4htd0")
+subsurf_scatter_strength = 0.73
+grow_amount = 0.352
+point_size = 55.9
+
+[sub_resource type="QuadMesh" id="QuadMesh_dt8nl"]
+material = SubResource("StandardMaterial3D_ot7iy")
+size = Vector2(500, 500)
+orientation = 1
+
+[node name="InfiniteLevel" type="Node3D"]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+shape = SubResource("BoxShape3D_ctk0t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("QuadMesh_dt8nl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.734358, 0.678762, 0, -0.678762, 0.734358, -33.1669, 12.6773, 15.7238)
+shadow_enabled = true
+
+[node name="MainCamera" type="Camera3D" parent="."]
+transform = Transform3D(0.735151, 0.221822, -0.640584, 2.77013e-08, 0.944949, 0.327218, 0.677903, -0.240555, 0.69468, -119.371, 17.0249, 72.4988)
+current = true
+script = ExtResource("2_gxt8l")
+max_distance = 6.0
+camera_height = 2.0
+
+[node name="TinyPlane1" parent="." instance=ExtResource("6_2gcd8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.6685, 15.7672, 53.8067)
+
+[node name="TinyPlane2" parent="." instance=ExtResource("6_2gcd8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.3368, 15.7672, 53.8067)
+linear_velocity = Vector3(0, 0, -1)
+
+[node name="TinyPlane3" parent="." instance=ExtResource("6_2gcd8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.0939, 15.7672, 53.8067)
+linear_velocity = Vector3(0, 0, -10)
+
+[node name="TinyPlane4" parent="." instance=ExtResource("6_2gcd8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.3559, 15.7672, 53.8067)
+linear_velocity = Vector3(0, 0, -20)
