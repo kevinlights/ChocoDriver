@@ -72,8 +72,6 @@ func _get_on_driver_seat() -> void:
 		return
 
 	if position.distance_squared_to(_seat.position) < seat_min_dist:
-		print("Seat reachead at ", _seat.position)
-		_seat = null
 		return
 
 	var rotation_tween: Tween = create_tween()
@@ -81,7 +79,6 @@ func _get_on_driver_seat() -> void:
 
 	var local_velocity = (_seat.position - position).normalized() * seat_access_speed
 	velocity = get_parent().get_transform().basis * local_velocity
-	print("- I'm at ", position, ", going to ", _seat.position, " with speed ", velocity)
 	move_and_slide()
 
 
@@ -115,7 +112,6 @@ func _get_in_vehicle(commander: LocalInput) -> void:
 	add_collision_exception_with(_vehicle)
 	_vehicle.drive_with(commander)
 	_seat = _find_seat_on(_vehicle)
-	print("I'm at ", position, " and I want to seat on ", _seat.position)
 
 
 ## Get out of the current vehicle
