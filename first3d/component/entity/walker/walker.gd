@@ -3,6 +3,8 @@ extends CharacterBody3D
 
 
 signal focus_required(me: Node3D)
+signal got_in
+signal got_out
 
 ## How fast the player moves in meters per second.
 @export var speed = 14
@@ -112,6 +114,7 @@ func _get_in_vehicle(commander: LocalInput) -> void:
 	add_collision_exception_with(_vehicle)
 	_vehicle.drive_with(commander)
 	_seat = _find_seat_on(_vehicle)
+	got_in.emit()
 
 
 ## Get out of the current vehicle
@@ -122,6 +125,7 @@ func _get_out_vehicle() -> void:
 	_vehicle = null
 	_seat = null
 	_get_head_up()
+	got_out.emit()
 
 
 ## Make the player stand up

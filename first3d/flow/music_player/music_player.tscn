@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://wde2y0rin5b2"]
+
+[ext_resource type="AudioStream" uid="uid://c3l60bt307wjh" path="res://flow/music_player/00-Wesh-tone-realaze.mp3" id="1_k8gsu"]
+[ext_resource type="Script" path="res://flow/music_player/music_player.gd" id="2_fda0p"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_k8gsu")
+script = ExtResource("2_fda0p")

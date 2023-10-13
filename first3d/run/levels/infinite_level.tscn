@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://7ivipmwaw24t"]
+[gd_scene load_steps=13 format=3 uid="uid://7ivipmwaw24t"]
 
 [ext_resource type="Texture2D" uid="uid://cgwafs6ukpm7y" path="res://component/entity/ground/ground051.jpg" id="1_3ytcp"]
 [ext_resource type="Script" path="res://run/levels/camera_tracker.gd" id="1_qdm47"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bcpri2x5afoyb" path="res://component/entity/box/box.tscn" id="2_e8xto"]
 [ext_resource type="PackedScene" uid="uid://dao17ylietgyl" path="res://component/entity/vehicles/plane/tiny_plane.tscn" id="4_tbpfc"]
 [ext_resource type="PackedScene" uid="uid://cj5dmtqadl5nf" path="res://component/entity/vehicles/jeep/Jeep.tscn" id="6_nnvc5"]
+[ext_resource type="Script" path="res://flow/music_player/music_player.gd" id="8_iulsm"]
+[ext_resource type="AudioStream" uid="uid://c3l60bt307wjh" path="res://flow/music_player/00-Wesh-tone-realaze.mp3" id="8_ndffw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ctk0t"]
 size = Vector3(500, 10, 500)
@@ -86,7 +88,13 @@ transform = Transform3D(-0.0560131, 0.291646, 0.954885, 0, 0.956386, -0.292105, 
 [node name="Jeep2" parent="." instance=ExtResource("6_nnvc5")]
 transform = Transform3D(1, 0, 0, 0, 0.956386, -0.292105, 0, 0.292105, 0.956386, -13.4204, 0.313514, -7.30216)
 
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_ndffw")
+script = ExtResource("8_iulsm")
+
 [connection signal="focus_required" from="MainWalker" to="CameraTracker" method="_on_focus_required"]
+[connection signal="got_in" from="MainWalker" to="MusicPlayer" method="_on_driver_got_in"]
+[connection signal="got_out" from="MainWalker" to="MusicPlayer" method="_on_driver_got_out"]
 [connection signal="dir_changed" from="MainWalker/Control" to="MainWalker" method="_on_dir_changed"]
 [connection signal="get_in_action" from="MainWalker/Control" to="MainWalker" method="_on_get_in_action"]
 [connection signal="main_action" from="MainWalker/Control" to="MainWalker" method="_on_main_action"]
