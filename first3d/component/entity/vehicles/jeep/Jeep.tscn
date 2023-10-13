@@ -18,6 +18,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.623038, 0)
 collision_layer = 8
 collision_mask = 11
 mass = 400.0
+center_of_mass_mode = 1
 script = ExtResource("1_fjw46")
 
 [node name="OrangeJeep_noWheel" parent="." instance=ExtResource("1_qgclq")]
@@ -38,9 +39,7 @@ shape = SubResource("BoxShape3D_skl11")
 [node name="FrontRightWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.332104, 1)
 use_as_steering = true
-wheel_roll_influence = 0.4
 wheel_radius = 0.3
-wheel_friction_slip = 1.0
 suspension_travel = 0.6
 suspension_stiffness = 50.0
 damping_compression = 0.3
@@ -56,9 +55,7 @@ mesh = SubResource("BoxMesh_f6lpk")
 [node name="FrontLeftWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.332104, 1)
 use_as_steering = true
-wheel_roll_influence = 0.4
 wheel_radius = 0.3
-wheel_friction_slip = 1.0
 suspension_travel = 0.6
 suspension_stiffness = 50.0
 damping_compression = 0.3
@@ -73,9 +70,7 @@ mesh = SubResource("BoxMesh_f6lpk")
 [node name="RearLeftWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.332104, -1.01869)
 use_as_traction = true
-wheel_roll_influence = 0.4
 wheel_radius = 0.3
-wheel_friction_slip = 1.0
 suspension_travel = 0.6
 suspension_stiffness = 50.0
 damping_compression = 0.3
@@ -90,9 +85,7 @@ mesh = SubResource("BoxMesh_f6lpk")
 [node name="RearRightWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.332104, -1.019)
 use_as_traction = true
-wheel_roll_influence = 0.4
 wheel_radius = 0.3
-wheel_friction_slip = 1.0
 suspension_travel = 0.6
 suspension_stiffness = 50.0
 damping_compression = 0.3
