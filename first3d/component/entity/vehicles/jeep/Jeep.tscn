@@ -1,11 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://cj5dmtqadl5nf"]
+[gd_scene load_steps=7 format=3 uid="uid://cj5dmtqadl5nf"]
 
 [ext_resource type="Script" path="res://component/entity/vehicles/jeep/jeep.gd" id="1_fjw46"]
 [ext_resource type="PackedScene" uid="uid://dlaj4npd144qd" path="res://component/entity/vehicles/jeep/OrangeJeep_noWheel.glb" id="1_qgclq"]
 [ext_resource type="PackedScene" uid="uid://cg6eyxgui8y2s" path="res://component/entity/vehicles/jeep/OrangeJeep_wheel.glb" id="2_f6y5a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1maan"]
-size = Vector3(1, 0.769157, 3.09562)
+size = Vector3(1, 0.769157, 2.98936)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_skl11"]
+size = Vector3(0.28984, 1.56027, 0.993305)
 
 [sub_resource type="BoxMesh" id="BoxMesh_f6lpk"]
 size = Vector3(0.3, 0.3, 0.3)
@@ -20,9 +23,17 @@ script = ExtResource("1_fjw46")
 [node name="OrangeJeep_noWheel" parent="." instance=ExtResource("1_qgclq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925237, 0.00334018)
+[node name="MainShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925237, -0.00412709)
 shape = SubResource("BoxShape3D_1maan")
+
+[node name="FrontAxis" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.641172, 1.10312)
+shape = SubResource("BoxShape3D_skl11")
+
+[node name="RearAxis" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.641172, -1.08224)
+shape = SubResource("BoxShape3D_skl11")
 
 [node name="FrontRightWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.332104, 1)
