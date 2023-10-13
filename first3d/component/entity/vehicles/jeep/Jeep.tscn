@@ -20,6 +20,7 @@ collision_mask = 11
 mass = 400.0
 center_of_mass_mode = 1
 script = ExtResource("1_fjw46")
+max_engine_force = 1842.0
 
 [node name="OrangeJeep_noWheel" parent="." instance=ExtResource("1_qgclq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)

@@ -1,7 +1,7 @@
 extends VehicleBody3D
 
-@onready var max_engine_force: float = 500
-@onready var max_steering: float = PI / 6.0 # degrees
+@export var max_engine_force: float = 500
+@export var max_steering: float = PI / 6.0 # degrees
 
 var _current_commander: LocalInput = null
 
