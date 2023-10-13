@@ -25,7 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925237, 0.00334018)
 shape = SubResource("BoxShape3D_1maan")
 
 [node name="FrontRightWheel" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.2, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.332104, 1)
 use_as_steering = true
 wheel_roll_influence = 0.4
 wheel_radius = 0.3
@@ -43,7 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165207, 0, 0)
 mesh = SubResource("BoxMesh_f6lpk")
 
 [node name="FrontLeftWheel" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.2, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.332104, 1)
 use_as_steering = true
 wheel_roll_influence = 0.4
 wheel_radius = 0.3
@@ -60,7 +60,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154773, 0, 0)
 mesh = SubResource("BoxMesh_f6lpk")
 
 [node name="RearLeftWheel" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.2, -1.01869)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.332104, -1.01869)
 use_as_traction = true
 wheel_roll_influence = 0.4
 wheel_radius = 0.3
@@ -77,7 +77,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.173029, 0, 0)
 mesh = SubResource("BoxMesh_f6lpk")
 
 [node name="RearRightWheel" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.2, -1.019)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.332104, -1.019)
 use_as_traction = true
 wheel_roll_influence = 0.4
 wheel_radius = 0.3
