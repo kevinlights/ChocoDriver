@@ -19,6 +19,7 @@ collision_layer = 8
 collision_mask = 11
 mass = 400.0
 center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0.06, 0)
 script = ExtResource("1_fjw46")
 max_engine_force = 1842.0
 
