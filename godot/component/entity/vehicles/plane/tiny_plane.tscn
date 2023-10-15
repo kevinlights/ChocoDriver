@@ -18,6 +18,8 @@ collision_layer = 8
 collision_mask = 3
 input_ray_pickable = false
 mass = 750.0
+max_contacts_reported = 1
+contact_monitor = true
 script = ExtResource("1_tviov")
 
 [node name="TinyPlane" parent="." instance=ExtResource("2_60pln")]

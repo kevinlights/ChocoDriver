@@ -1,7 +1,13 @@
 class_name SeatedVehicle
 extends VehicleBody3D
 
+const CRASH_EFFECT: Resource = preload("res://effect/crash/crash.tscn")
+
 var _current_commander: LocalInput = null
+
+
+func _init() -> void:
+	body_shape_entered.connect(_on_body_shape_entered)
 
 
 ## Make the vehicle responds to driver commands
@@ -17,16 +23,27 @@ func get_out() -> void:
 	_current_commander = null
 
 
-## Need to be overriden to return an available seat
+func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, local_shape_index: int) -> void:
+	if body is Node3D:
+		_crash_on(body as Node3D)
+
+
+func _crash_on(body: Node3D) -> void:
+	var crash_effect: CrashEffect = CRASH_EFFECT.instantiate()
+	crash_effect.position = body.get_position()
+	get_parent_node_3d().add_child(crash_effect)
+
+
+## Need to be overridden to return an available seat
 func get_free_seat() -> Node3D:
 	return null
 
 
-## Need to be overriden to react to direction changed
+## Need to be overridden to react to direction changed
 func _on_dir_changed(dir: Vector2) -> void:
 	pass
 
 
-## Need to be overriden to react to main action
+## Need to be overridden to react to main action
 func _on_main_action(pressed: bool) -> void:
 	pass
