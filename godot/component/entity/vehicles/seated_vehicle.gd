@@ -35,7 +35,7 @@ func _crash_on(body: Node3D) -> void:
 
 
 func _get_contact_from(body: Node3D) -> Vector3:
-	return body.get_position()
+	return get_position()
 
 
 ## Need to be overridden to return an available seat
