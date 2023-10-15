@@ -30,8 +30,12 @@ func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, lo
 
 func _crash_on(body: Node3D) -> void:
 	var crash_effect: CrashEffect = CRASH_EFFECT.instantiate()
-	crash_effect.position = body.get_position()
+	crash_effect.position = _get_contact_from(body)
 	get_parent_node_3d().add_child(crash_effect)
+
+
+func _get_contact_from(body: Node3D) -> Vector3:
+	return body.get_position()
 
 
 ## Need to be overridden to return an available seat
