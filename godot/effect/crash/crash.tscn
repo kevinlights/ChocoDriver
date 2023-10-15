@@ -28,7 +28,7 @@ script = ExtResource("1_8bcl0")
 [node name="Noise" type="AudioStreamPlayer3D" parent="."]
 script = ExtResource("1_xh8ax")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="Splash" type="GPUParticles3D" parent="."]
 emitting = false
 one_shot = true
 explosiveness = 1.0
@@ -37,3 +37,4 @@ draw_pass_1 = SubResource("SphereMesh_f2rrx")
 script = ExtResource("3_mi21g")
 
 [connection signal="finished" from="Noise" to="." method="_on_noise_finished"]
+[connection signal="finished" from="Splash" to="." method="_on_splash_finished"]
