@@ -1,5 +1,5 @@
 class_name TinyPlane
-extends RigidBody3D
+extends VehicleBody3D
 
 @export var thrust_power: float = 10000.0
 @export var turn_to_torque: float = 2000.0

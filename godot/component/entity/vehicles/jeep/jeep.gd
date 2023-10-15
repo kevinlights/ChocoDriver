@@ -1,3 +1,4 @@
+class_name Jeep
 extends VehicleBody3D
 
 @export var max_engine_force: float = 500
