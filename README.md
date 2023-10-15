@@ -7,3 +7,7 @@ A 3D game where you drive vehicles to get chocolate.
 ### Musics
 
 - "Wesh tone Realaze" of Hiphop domain
+
+### Sound effects
+
+From [SuperTuxKart](https://supertuxkart.net/Media_Repo)
