@@ -1,3 +1,3 @@
-# Godot 4 Lab
+# Chocolate driver
 
-First experimental Godot 4 project.
+A 3D game where you drive vehicles to get chocolate.
