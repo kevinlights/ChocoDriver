@@ -31,6 +31,9 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 
 
 func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, local_shape_index: int) -> void:
+	if body is Walker:
+		return
+
 	_has_collided = true
 
 
