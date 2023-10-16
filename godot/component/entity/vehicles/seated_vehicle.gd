@@ -4,6 +4,7 @@ extends VehicleBody3D
 const CRASH_EFFECT: Resource = preload("res://effect/crash/crash.tscn")
 
 var _current_commander: LocalInput = null
+var _has_collided: bool = false
 
 
 func _init() -> void:
@@ -23,19 +24,20 @@ func get_out() -> void:
 	_current_commander = null
 
 
+func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
+	if _has_collided and state.get_contact_count() > 0:
+		_crash_on(state.get_contact_collider_position(0))
+		_has_collided = false
+
+
 func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, local_shape_index: int) -> void:
-	if body is Node3D:
-		_crash_on(body as Node3D)
+	_has_collided = true
 
 
-func _crash_on(body: Node3D) -> void:
+func _crash_on(pos: Vector3) -> void:
 	var crash_effect: CrashEffect = CRASH_EFFECT.instantiate()
-	crash_effect.position = _get_contact_from(body)
+	crash_effect.position = pos
 	get_parent_node_3d().add_child(crash_effect)
-
-
-func _get_contact_from(body: Node3D) -> Vector3:
-	return get_position()
 
 
 ## Need to be overridden to return an available seat
