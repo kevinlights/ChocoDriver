@@ -29,7 +29,7 @@ func get_free_seat() -> Node3D:
 	return $DrivingSeat
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta) -> void:
 	_apply_plane_rotation()
 	_apply_plane_thrust()
 	_apply_wing_resistance()

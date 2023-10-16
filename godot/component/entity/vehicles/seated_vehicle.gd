@@ -34,7 +34,7 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 		_has_collided = false
 
 
-func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, local_shape_index: int) -> void:
+func _on_body_shape_entered(_body_rid, body: Node, _body_shape_index, _local_shape_index) -> void:
 	if body is Walker:
 		return
 
@@ -53,10 +53,10 @@ func get_free_seat() -> Node3D:
 
 
 ## Need to be overridden to react to direction changed
-func _on_dir_changed(dir: Vector2) -> void:
+func _on_dir_changed(_dir: Vector2) -> void:
 	pass
 
 
 ## Need to be overridden to react to main action
-func _on_main_action(pressed: bool) -> void:
+func _on_main_action(_pressed: bool) -> void:
 	pass
