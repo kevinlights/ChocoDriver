@@ -2,6 +2,7 @@ class_name SeatedVehicle
 extends VehicleBody3D
 
 const CRASH_EFFECT: Resource = preload("res://effect/crash/crash.tscn")
+const MINIMAL_CRASH_SPEED: float = 1.0 # m2/s2
 
 var _current_commander: LocalInput = null
 var _has_collided: bool = false
@@ -25,7 +26,10 @@ func get_out() -> void:
 
 
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
-	if _has_collided and state.get_contact_count() > 0:
+	if state.get_contact_count() <= 0:
+		return
+
+	if _has_collided and linear_velocity.length_squared() > MINIMAL_CRASH_SPEED:
 		_crash_on(state.get_contact_collider_position(0))
 		_has_collided = false
 
