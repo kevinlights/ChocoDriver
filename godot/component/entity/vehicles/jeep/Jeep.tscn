@@ -40,7 +40,7 @@ shape = SubResource("BoxShape3D_skl11")
 [node name="FrontRightWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.332104, 1)
 use_as_steering = true
-wheel_radius = 0.3
+wheel_radius = 0.32
 suspension_travel = 0.6
 suspension_stiffness = 50.0
 damping_compression = 0.3
@@ -51,7 +51,7 @@ damping_relaxation = 0.5
 [node name="FrontLeftWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.332104, 1)
 use_as_steering = true
-wheel_radius = 0.3
+wheel_radius = 0.32
 suspension_travel = 0.6
 suspension_stiffness = 50.0
 damping_compression = 0.3
@@ -63,7 +63,7 @@ transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 [node name="RearLeftWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.332104, -1.01869)
 use_as_traction = true
-wheel_radius = 0.3
+wheel_radius = 0.32
 suspension_travel = 0.6
 suspension_stiffness = 50.0
 damping_compression = 0.3
@@ -75,7 +75,7 @@ transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 [node name="RearRightWheel" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.332104, -1.019)
 use_as_traction = true
-wheel_radius = 0.3
+wheel_radius = 0.32
 suspension_travel = 0.6
 suspension_stiffness = 50.0
 damping_compression = 0.3
