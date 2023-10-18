@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://7ivipmwaw24t"]
+[gd_scene load_steps=14 format=3 uid="uid://7ivipmwaw24t"]
 
 [ext_resource type="Texture2D" uid="uid://cgwafs6ukpm7y" path="res://component/entity/ground/ground051.jpg" id="1_3ytcp"]
 [ext_resource type="Script" path="res://run/levels/camera_tracker.gd" id="1_qdm47"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bk0s5bn8k08bc" path="res://flow/control/local_input/local_input.tscn" id="2_0i5t8"]
 [ext_resource type="PackedScene" uid="uid://bcpri2x5afoyb" path="res://component/entity/props/box/box.tscn" id="2_e8xto"]
 [ext_resource type="PackedScene" uid="uid://dao17ylietgyl" path="res://component/entity/vehicles/plane/tiny_plane.tscn" id="4_tbpfc"]
+[ext_resource type="PackedScene" uid="uid://dtjp7851cx0vf" path="res://component/entity/props/triangle/triangle.tscn" id="6_0cjsd"]
 [ext_resource type="PackedScene" uid="uid://cj5dmtqadl5nf" path="res://component/entity/vehicles/jeep/Jeep.tscn" id="6_nnvc5"]
 [ext_resource type="Script" path="res://flow/music_player/music_player.gd" id="8_iulsm"]
 [ext_resource type="AudioStream" uid="uid://c3l60bt307wjh" path="res://flow/music_player/00-Wesh-tone-realaze.mp3" id="8_ndffw"]
@@ -56,25 +57,43 @@ transform = Transform3D(0.701432, 0, 0.712736, 0, 1, 0, -0.712736, 0, 0.701432, 
 [node name="NpcWalker1" parent="." instance=ExtResource("1_x0026")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0621, 6.0173, -4.87909)
 
-[node name="Boxes" type="Node3D" parent="."]
+[node name="Props" type="Node3D" parent="."]
 
-[node name="Box1" parent="Boxes" instance=ExtResource("2_e8xto")]
+[node name="Box1" parent="Props" instance=ExtResource("2_e8xto")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
-[node name="Box2" parent="Boxes" instance=ExtResource("2_e8xto")]
+[node name="Box2" parent="Props" instance=ExtResource("2_e8xto")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2632, -0.5, -7.95074)
 
-[node name="Box3" parent="Boxes" instance=ExtResource("2_e8xto")]
+[node name="Box3" parent="Props" instance=ExtResource("2_e8xto")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.53697, 1.42774, -11.1883)
 
-[node name="Box4" parent="Boxes" instance=ExtResource("2_e8xto")]
+[node name="Box4" parent="Props" instance=ExtResource("2_e8xto")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8675, 0, -8.18967)
 
-[node name="Box5" parent="Boxes" instance=ExtResource("2_e8xto")]
+[node name="Box5" parent="Props" instance=ExtResource("2_e8xto")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5707, 0, -5.78347)
 
-[node name="Box6" parent="Boxes" instance=ExtResource("2_e8xto")]
+[node name="Box6" parent="Props" instance=ExtResource("2_e8xto")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1773, 0, -8.17952)
+
+[node name="Triangle1" parent="Props" instance=ExtResource("6_0cjsd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.8051, -1.03294, 7.24106)
+
+[node name="Triangle2" parent="Props" instance=ExtResource("6_0cjsd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.1564, -1.03294, -10.0699)
+
+[node name="Triangle3" parent="Props" instance=ExtResource("6_0cjsd")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.88271, -1.03294, -2.61738)
+
+[node name="Triangle4" parent="Props" instance=ExtResource("6_0cjsd")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1.03294, 5.02677)
+
+[node name="Triangle5" parent="Props" instance=ExtResource("6_0cjsd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86197, -1.03294, -29.5969)
+
+[node name="Triangle6" parent="Props" instance=ExtResource("6_0cjsd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9725, -1.03294, -13.1894)
 
 [node name="TinyPlane" parent="." instance=ExtResource("4_tbpfc")]
 transform = Transform3D(0.477312, 0.527326, -0.702923, -0.741391, 0.671074, 0, 0.471713, 0.521141, 0.711266, -76.6685, 15.7672, 53.8067)
