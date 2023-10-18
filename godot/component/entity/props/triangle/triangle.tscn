@@ -8,7 +8,8 @@ points = PackedVector3Array(0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1
 [node name="Triangle" type="StaticBody3D"]
 
 [node name="SimpleTriangle" parent="." instance=ExtResource("1_6di7t")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 0, -1)
 shape = SubResource("ConvexPolygonShape3D_xh6se")
