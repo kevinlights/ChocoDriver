@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b8q3yfvdv320p"
-path="res://.godot/imported/OrangeJeepOpen_noWheel.glb-9e0efd2a22870d84488658755b0e5de6.scn"
+uid="uid://b4ra2s5exappk"
+path="res://.godot/imported/OrangeJeepOpen_wheel.glb-05c4943e0171cd2843879c4eb9873b6f.scn"
 
 [deps]
 
-source_file="res://component/entity/vehicles/jeep/OrangeJeepOpen_noWheel.glb"
-dest_files=["res://.godot/imported/OrangeJeepOpen_noWheel.glb-9e0efd2a22870d84488658755b0e5de6.scn"]
+source_file="res://component/entity/vehicles/jeep/OrangeJeepOpen_wheel.glb"
+dest_files=["res://.godot/imported/OrangeJeepOpen_wheel.glb-05c4943e0171cd2843879c4eb9873b6f.scn"]
 
 [params]
 

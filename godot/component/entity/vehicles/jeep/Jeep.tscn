@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cj5dmtqadl5nf"]
 
 [ext_resource type="Script" path="res://component/entity/vehicles/jeep/jeep.gd" id="1_fjw46"]
-[ext_resource type="PackedScene" uid="uid://dlaj4npd144qd" path="res://component/entity/vehicles/jeep/OrangeJeep_noWheel.glb" id="1_qgclq"]
+[ext_resource type="PackedScene" uid="uid://b8q3yfvdv320p" path="res://component/entity/vehicles/jeep/OrangeJeepOpen_noWheel.glb" id="2_1w6lv"]
 [ext_resource type="PackedScene" uid="uid://b4ra2s5exappk" path="res://component/entity/vehicles/jeep/OrangeJeepOpen_wheel.glb" id="3_skal6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1maan"]
@@ -22,8 +22,8 @@ contact_monitor = true
 script = ExtResource("1_fjw46")
 max_engine_force = 1842.0
 
-[node name="OrangeJeep_noWheel" parent="." instance=ExtResource("1_qgclq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
+[node name="OrangeJeepOpen_noWheel" parent="." instance=ExtResource("2_1w6lv")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
 
 [node name="MainShape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925237, -0.00412709)
@@ -85,4 +85,4 @@ damping_relaxation = 0.5
 
 [node name="RearSeat" type="Node3D" parent="." groups=["seat"]]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969, -0.597)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.495948, -0.178343)
