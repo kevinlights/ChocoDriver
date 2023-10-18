@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://run/levels/camera_tracker.gd" id="1_qdm47"]
 [ext_resource type="PackedScene" uid="uid://b10k58capm04o" path="res://component/entity/walker/walker.tscn" id="1_x0026"]
 [ext_resource type="PackedScene" uid="uid://bk0s5bn8k08bc" path="res://flow/control/local_input/local_input.tscn" id="2_0i5t8"]
-[ext_resource type="PackedScene" uid="uid://bcpri2x5afoyb" path="res://component/entity/box/box.tscn" id="2_e8xto"]
+[ext_resource type="PackedScene" uid="uid://bcpri2x5afoyb" path="res://component/entity/props/box/box.tscn" id="2_e8xto"]
 [ext_resource type="PackedScene" uid="uid://dao17ylietgyl" path="res://component/entity/vehicles/plane/tiny_plane.tscn" id="4_tbpfc"]
 [ext_resource type="PackedScene" uid="uid://cj5dmtqadl5nf" path="res://component/entity/vehicles/jeep/Jeep.tscn" id="6_nnvc5"]
 [ext_resource type="Script" path="res://flow/music_player/music_player.gd" id="8_iulsm"]

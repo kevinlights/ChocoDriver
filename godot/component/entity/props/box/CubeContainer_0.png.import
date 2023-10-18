@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbvren6ycpepa"
-path.s3tc="res://.godot/imported/CubeContainer_0.png-b907972e43523411a1ce5e381b72222c.s3tc.ctex"
+path.s3tc="res://.godot/imported/CubeContainer_0.png-15e16de14f080da2ad8bf26b2e15fbbb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://component/entity/box/CubeContainer_0.png"
-dest_files=["res://.godot/imported/CubeContainer_0.png-b907972e43523411a1ce5e381b72222c.s3tc.ctex"]
+source_file="res://component/entity/props/box/CubeContainer_0.png"
+dest_files=["res://.godot/imported/CubeContainer_0.png-15e16de14f080da2ad8bf26b2e15fbbb.s3tc.ctex"]
 
 [params]
 

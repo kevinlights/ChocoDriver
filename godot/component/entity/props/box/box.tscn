@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bcpri2x5afoyb"]
 
-[ext_resource type="PackedScene" uid="uid://bii08dedmqwkm" path="res://component/entity/box/CubeContainer.glb" id="1_bky5n"]
+[ext_resource type="PackedScene" uid="uid://bii08dedmqwkm" path="res://component/entity/props/box/CubeContainer.glb" id="1_n6b7q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v0rct"]
 
@@ -10,5 +10,5 @@ collision_mask = 0
 [node name="Shape" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_v0rct")
 
-[node name="CubeContainer" parent="." instance=ExtResource("1_bky5n")]
+[node name="CubeContainer" parent="." instance=ExtResource("1_n6b7q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
