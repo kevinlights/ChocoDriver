@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwhwbm6jrvg42"]
+[gd_scene load_steps=6 format=3 uid="uid://bwhwbm6jrvg42"]
 
 [ext_resource type="PackedScene" uid="uid://6lkpo3l84cek" path="res://component/entity/buildings/outer_stairs_house/OuterStairsHouse.glb" id="1_h07vm"]
 [ext_resource type="Shape3D" uid="uid://8k8xlrh2hxe2" path="res://component/entity/props/triangle/triangle_shape.tres" id="2_vflk4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hsohw"]
+size = Vector3(4, 4, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6vb0o"]
 size = Vector3(4, 4, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fhf2h"]
@@ -28,7 +31,7 @@ shape = ExtResource("2_vflk4")
 
 [node name="UpperBox" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 6, -4)
-shape = SubResource("BoxShape3D_hsohw")
+shape = SubResource("BoxShape3D_6vb0o")
 
 [node name="HouseBody" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, -2)
