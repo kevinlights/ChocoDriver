@@ -123,6 +123,9 @@ transform = Transform3D(-0.0560131, 0.291646, 0.954885, 0, 0.956386, -0.292105, 
 [node name="Jeep2" parent="." instance=ExtResource("6_nnvc5")]
 transform = Transform3D(1, 0, 0, 0, 0.956386, -0.292105, 0, 0.292105, 0.956386, -13.4204, 0.313514, -7.30216)
 
+[node name="Jeep3" parent="." instance=ExtResource("6_nnvc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.0559, 8.17644, 19.5959)
+
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_ndffw")
 script = ExtResource("8_iulsm")
@@ -134,6 +137,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.9305, 0, -14.0089)
 
 [node name="StairHouse2" parent="Buildings" instance=ExtResource("11_j8m6y")]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 85.4211, 0, -14.0089)
+
+[node name="StairHouse3" parent="Buildings" instance=ExtResource("11_j8m6y")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 85.4211, 0, 15.4147)
+
+[node name="StairHouse4" parent="Buildings" instance=ExtResource("11_j8m6y")]
+transform = Transform3D(4.37114e-08, 0, 1, 0, 1, 0, 1, 0, -4.37114e-08, 62.7817, 0, 15.4147)
+
+[node name="StairHouse5" parent="Buildings" instance=ExtResource("11_j8m6y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 62.7817, 0, 32.8533)
 
 [connection signal="focus_required" from="MainWalker" to="CameraTracker" method="_on_focus_required"]
 [connection signal="got_in" from="MainWalker" to="MusicPlayer" method="_on_driver_got_in"]
