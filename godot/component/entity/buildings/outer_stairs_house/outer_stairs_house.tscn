@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwhwbm6jrvg42"]
+
+[ext_resource type="PackedScene" uid="uid://6lkpo3l84cek" path="res://component/entity/buildings/outer_stairs_house/OuterStairsHouse.glb" id="1_h07vm"]
+[ext_resource type="Shape3D" uid="uid://8k8xlrh2hxe2" path="res://component/entity/props/triangle/triangle_shape.tres" id="2_vflk4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hsohw"]
+size = Vector3(4, 4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fhf2h"]
+size = Vector3(8, 12, 8)
+
+[node name="StairHouse" type="StaticBody3D"]
+
+[node name="OuterStairsHouse" parent="." instance=ExtResource("1_h07vm")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="GroundTriangle" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -2, 0, 6)
+shape = ExtResource("2_vflk4")
+
+[node name="StraightStair" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 0)
+shape = SubResource("BoxShape3D_hsohw")
+
+[node name="UpperTriangle" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4, 0, -3.49691e-07, 0, 4, 0, 3.49691e-07, 0, -4, 6, 4, 2)
+shape = ExtResource("2_vflk4")
+
+[node name="UpperBox" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 6, -4)
+shape = SubResource("BoxShape3D_hsohw")
+
+[node name="HouseBody" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, -2)
+shape = SubResource("BoxShape3D_fhf2h")
