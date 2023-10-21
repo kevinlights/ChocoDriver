@@ -110,8 +110,11 @@ script = ExtResource("8_iulsm")
 
 [node name="Buildings" type="Node3D" parent="."]
 
-[node name="StairHouse" parent="Buildings" instance=ExtResource("11_j8m6y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0102, 0, -5.84074)
+[node name="StairHouse1" parent="Buildings" instance=ExtResource("11_j8m6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.9305, 0, -14.0089)
+
+[node name="StairHouse2" parent="Buildings" instance=ExtResource("11_j8m6y")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 85.4211, 0, -14.0089)
 
 [connection signal="focus_required" from="MainWalker" to="CameraTracker" method="_on_focus_required"]
 [connection signal="got_in" from="MainWalker" to="MusicPlayer" method="_on_driver_got_in"]
