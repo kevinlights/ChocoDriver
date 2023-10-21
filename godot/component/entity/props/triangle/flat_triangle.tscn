@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhmnou48k24lr"]
+
+[ext_resource type="PackedScene" uid="uid://julmsb44217f" path="res://component/entity/props/triangle/SimpleTriangle.glb" id="1_j6dhx"]
+[ext_resource type="Shape3D" uid="uid://jmhl8rtvnfcp" path="res://component/entity/props/triangle/flat_triangle_shape.tres" id="2_ovovf"]
+
+[node name="FlatTriangle" type="StaticBody3D"]
+
+[node name="SimpleTriangle" parent="." instance=ExtResource("1_j6dhx")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 0, -2)
+shape = ExtResource("2_ovovf")
