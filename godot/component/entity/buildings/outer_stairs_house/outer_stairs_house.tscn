@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwhwbm6jrvg42"]
+[gd_scene load_steps=7 format=3 uid="uid://bwhwbm6jrvg42"]
 
 [ext_resource type="PackedScene" uid="uid://6lkpo3l84cek" path="res://component/entity/buildings/outer_stairs_house/OuterStairsHouse.glb" id="1_h07vm"]
+[ext_resource type="Shape3D" uid="uid://jmhl8rtvnfcp" path="res://component/entity/props/triangle/flat_triangle_shape.tres" id="2_lu5vm"]
 [ext_resource type="Shape3D" uid="uid://8k8xlrh2hxe2" path="res://component/entity/props/triangle/triangle_shape.tres" id="2_vflk4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hsohw"]
@@ -18,8 +19,8 @@ size = Vector3(8, 12, 8)
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 
 [node name="GroundTriangle" type="CollisionShape3D" parent="."]
-transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -2, 0, 6)
-shape = ExtResource("2_vflk4")
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -6, 0, 6)
+shape = ExtResource("2_lu5vm")
 
 [node name="StraightStair" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 0)
