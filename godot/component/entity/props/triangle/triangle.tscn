@@ -1,9 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dtjp7851cx0vf"]
 
 [ext_resource type="PackedScene" uid="uid://julmsb44217f" path="res://component/entity/props/triangle/SimpleTriangle.glb" id="1_6di7t"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xh6se"]
-points = PackedVector3Array(0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1)
+[ext_resource type="Shape3D" uid="uid://8k8xlrh2hxe2" path="res://component/entity/props/triangle/triangle_shape.tres" id="2_shid1"]
 
 [node name="Triangle" type="StaticBody3D"]
 
@@ -12,4 +10,4 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 0, -1)
-shape = SubResource("ConvexPolygonShape3D_xh6se")
+shape = ExtResource("2_shid1")
