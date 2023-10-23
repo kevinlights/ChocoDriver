@@ -41,9 +41,10 @@ func trigger_jump() -> void:
 func trigger_direction(dir: Vector2) -> void:
 	#target_rotation = -dir.x * turn_to_rad
 	#var ground_velocity: Vector2 = Vector2.UP.rotated(-global_rotation.y) * dir.y * speed
-	target_velocity.x = dir.x * speed
-	target_velocity.z = -dir.y * speed
-
+	var target_character_direction = Vector3(dir.x, 0.0, -dir.y)
+	var target_world_direction: Vector3 = get_viewport().get_camera_3d().get_camera_transform().basis * target_character_direction
+	target_world_direction.y = 0.0
+	target_velocity = target_world_direction.normalized() * speed
 
 ## Return true if inside a vehicle
 func is_onboard() -> bool:
