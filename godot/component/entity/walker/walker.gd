@@ -146,7 +146,6 @@ func _get_head_up():
 ## Make the player look forward
 func _look_forward(forward: Vector3) -> void:
 	var horizontal_forward: Vector3 = forward.slide(Vector3.UP)
-	print("Forward ", forward, " without Y : ", horizontal_forward)
 	if horizontal_forward.is_zero_approx():
 		return
 	else:
