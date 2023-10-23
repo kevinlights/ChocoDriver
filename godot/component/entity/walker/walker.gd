@@ -21,7 +21,6 @@ signal got_out
 @export var seat_rotation_duration: float = 1.0
 
 var target_velocity := Vector3.ZERO
-var target_rotation: float = 0.0
 
 var _vehicle: Node3D = null
 var _seat: Node3D = null
@@ -43,7 +42,6 @@ func trigger_direction(dir: Vector2) -> void:
 	var camera_basis: Basis = get_viewport().get_camera_3d().get_camera_transform().basis
 	var target_world_direction: Vector3 = camera_basis * target_character_direction
 	target_world_direction.y = 0.0
-	_look_forward(target_world_direction)
 	target_velocity = target_world_direction.normalized() * speed
 
 
@@ -60,7 +58,8 @@ func _physics_process(delta: float) -> void:
 
 
 func _move_with_feet(delta: float):
-	rotate_y(target_rotation)
+	# Face forward
+	_look_forward(target_velocity)
 
 	# Gravity
 	if not is_on_floor():
