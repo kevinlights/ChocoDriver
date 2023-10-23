@@ -21,6 +21,7 @@ signal got_out
 @export var seat_rotation_duration: float = 1.0
 
 var target_velocity := Vector3.ZERO
+var target_character_direction := Vector3.ZERO # From command
 
 var _vehicle: Node3D = null
 var _seat: Node3D = null
@@ -38,14 +39,7 @@ func trigger_jump() -> void:
 
 
 func trigger_direction(dir: Vector2) -> void:
-	var target_character_direction = Vector3(dir.x, 0.0, -dir.y)
-	var camera_basis: Basis = get_viewport().get_camera_3d().get_camera_transform().basis
-	var target_world_direction: Vector3 = camera_basis * target_character_direction
-	target_world_direction.y = 0.0
-	var target_walk_velocity = target_world_direction.normalized() * speed * dir.length()
-
-	target_velocity.x = target_walk_velocity.x
-	target_velocity.z = target_walk_velocity.z
+	target_character_direction = Vector3(dir.x, 0.0, -dir.y)
 
 
 ## Return true if inside a vehicle
@@ -61,6 +55,15 @@ func _physics_process(delta: float) -> void:
 
 
 func _move_with_feet(delta: float):
+	# Walk according to the camera angle
+	var camera_basis: Basis = get_viewport().get_camera_3d().get_camera_transform().basis
+	var target_world_direction: Vector3 = camera_basis * target_character_direction
+	target_world_direction.y = 0.0
+	var target_walk_velocity = target_world_direction.normalized() * speed * target_character_direction.length()
+
+	target_velocity.x = target_walk_velocity.x
+	target_velocity.z = target_walk_velocity.z
+
 	# Face forward
 	_look_forward(target_velocity)
 
