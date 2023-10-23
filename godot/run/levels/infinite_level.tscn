@@ -51,7 +51,7 @@ max_distance = 6.0
 camera_height = 2.0
 
 [node name="MainWalker" parent="." instance=ExtResource("1_x0026")]
-transform = Transform3D(0.701432, 0, 0.712736, 0, 1, 0, -0.712736, 0, 0.701432, -11.0852, 1.31191, -4.00841)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0852, 1.31191, -4.00841)
 
 [node name="Control" parent="MainWalker" instance=ExtResource("2_0i5t8")]
 

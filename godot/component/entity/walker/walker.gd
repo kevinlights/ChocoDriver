@@ -39,10 +39,10 @@ func trigger_jump() -> void:
 
 
 func trigger_direction(dir: Vector2) -> void:
-	target_rotation = -dir.x * turn_to_rad
-	var ground_velocity: Vector2 = Vector2.UP.rotated(-global_rotation.y) * dir.y * speed
-	target_velocity.x = ground_velocity.x
-	target_velocity.z = ground_velocity.y
+	#target_rotation = -dir.x * turn_to_rad
+	#var ground_velocity: Vector2 = Vector2.UP.rotated(-global_rotation.y) * dir.y * speed
+	target_velocity.x = dir.x * speed
+	target_velocity.z = -dir.y * speed
 
 
 ## Return true if inside a vehicle
