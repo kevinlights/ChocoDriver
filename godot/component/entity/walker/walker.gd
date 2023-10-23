@@ -151,8 +151,6 @@ func _look_forward(forward: Vector3) -> void:
 	if is_vertical:
 		return
 	else:
-		print("Look from ", position, " to direction ", forward)
-		print("Angle ", forward.angle_to(Vector3.UP))
 		look_at(position + forward)
 
 
