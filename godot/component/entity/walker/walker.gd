@@ -145,16 +145,12 @@ func _get_head_up():
 
 ## Make the player look forward
 func _look_forward(forward: Vector3) -> void:
-	if forward.is_zero_approx():
-		return
-
-	var angle_to_up: float = forward.angle_to(Vector3.UP)
-	const zero_tolerance: float = 0.001
-	var is_vertical: bool = angle_to_up < zero_tolerance or absf(angle_to_up - PI) < zero_tolerance
-	if is_vertical:
+	var horizontal_forward: Vector3 = forward.slide(Vector3.UP)
+	print("Forward ", forward, " without Y : ", horizontal_forward)
+	if horizontal_forward.is_zero_approx():
 		return
 	else:
-		look_at(position + forward)
+		look_at(position + horizontal_forward)
 
 
 ## Return closest vehicle within reach
