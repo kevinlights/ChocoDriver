@@ -42,7 +42,7 @@ func trigger_direction(dir: Vector2) -> void:
 	var camera_basis: Basis = get_viewport().get_camera_3d().get_camera_transform().basis
 	var target_world_direction: Vector3 = camera_basis * target_character_direction
 	target_world_direction.y = 0.0
-	var target_walk_velocity = target_world_direction.normalized() * speed
+	var target_walk_velocity = target_world_direction.normalized() * speed * dir.length()
 
 	target_velocity.x = target_walk_velocity.x
 	target_velocity.z = target_walk_velocity.z
