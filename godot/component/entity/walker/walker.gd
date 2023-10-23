@@ -39,11 +39,11 @@ func trigger_jump() -> void:
 
 
 func trigger_direction(dir: Vector2) -> void:
-	#target_rotation = -dir.x * turn_to_rad
-	#var ground_velocity: Vector2 = Vector2.UP.rotated(-global_rotation.y) * dir.y * speed
 	var target_character_direction = Vector3(dir.x, 0.0, -dir.y)
-	var target_world_direction: Vector3 = get_viewport().get_camera_3d().get_camera_transform().basis * target_character_direction
+	var camera_basis: Basis = get_viewport().get_camera_3d().get_camera_transform().basis
+	var target_world_direction: Vector3 = camera_basis * target_character_direction
 	target_world_direction.y = 0.0
+	_look_forward(target_world_direction)
 	target_velocity = target_world_direction.normalized() * speed
 
 ## Return true if inside a vehicle
@@ -132,6 +132,11 @@ func _get_out_vehicle() -> void:
 ## Make the player stand up
 func _get_head_up():
 	set_rotation(Vector3(0.0, rotation.y, 0.0))
+
+
+## Make the player look forward
+func _look_forward(forward: Vector3) -> void:
+	look_at(position + forward)
 
 
 ## Return closest vehicle within reach
