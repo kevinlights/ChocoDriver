@@ -46,6 +46,7 @@ func trigger_direction(dir: Vector2) -> void:
 	_look_forward(target_world_direction)
 	target_velocity = target_world_direction.normalized() * speed
 
+
 ## Return true if inside a vehicle
 func is_onboard() -> bool:
 	return _vehicle != null
@@ -86,10 +87,16 @@ func _get_on_driver_seat() -> void:
 
 
 func _on_dir_changed(dir: Vector2) -> void:
+	if is_onboard():
+		return
+
 	trigger_direction(dir)
 
 
 func _on_main_action(pressed: bool) -> void:
+	if is_onboard():
+		return
+
 	if pressed:
 		trigger_jump()
 
