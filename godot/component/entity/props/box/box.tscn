@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcpri2x5afoyb"]
+[gd_scene load_steps=4 format=3 uid="uid://bcpri2x5afoyb"]
 
 [ext_resource type="PackedScene" uid="uid://bii08dedmqwkm" path="res://component/entity/props/box/CubeContainer.glb" id="1_n6b7q"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ldttd"]
+friction = 0.9
+bounce = 0.2
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_v0rct"]
 
-[node name="Box" type="StaticBody3D"]
-collision_mask = 0
+[node name="Box" type="RigidBody3D"]
+collision_layer = 16
+collision_mask = 31
+mass = 35.0
+physics_material_override = SubResource("PhysicsMaterial_ldttd")
 
 [node name="Shape" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_v0rct")
