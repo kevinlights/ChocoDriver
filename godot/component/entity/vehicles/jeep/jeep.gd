@@ -6,6 +6,10 @@ extends SeatedVehicle
 @export var max_steering: float = PI / 6.0 # degrees
 
 
+func _ready() -> void:
+	hand_brake(true)
+
+
 func steer(ratio: float) -> void:
 	set_steering(ratio * max_steering)
 
