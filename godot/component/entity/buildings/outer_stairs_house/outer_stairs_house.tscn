@@ -10,8 +10,8 @@ size = Vector3(4, 4, 12)
 [sub_resource type="BoxShape3D" id="BoxShape3D_6vb0o"]
 size = Vector3(4, 4, 4)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_fhf2h"]
-size = Vector3(8, 12, 8)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n8jci"]
+points = PackedVector3Array(2, 0, 2, -6, 0, 0, -4, 0, 2, -6, 0, -4, -4, 0, -6, 2, 0, -6, 2, 8.725, 2, 2, 8.725, -6, -4, 8.725, -6, -6, 11.45, -4, -6, 11.45, 0, -4, 8.725, 2, 2, 12.45, -2, -6, 12.45, -2, 2, 11.45, -4, 2, 11.45, 0)
 
 [node name="StairHouse" type="StaticBody3D"]
 
@@ -35,5 +35,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 6, -4)
 shape = SubResource("BoxShape3D_6vb0o")
 
 [node name="HouseBody" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 6, -2)
-shape = SubResource("BoxShape3D_fhf2h")
+shape = SubResource("ConvexPolygonShape3D_n8jci")
