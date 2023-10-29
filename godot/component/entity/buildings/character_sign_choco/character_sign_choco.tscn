@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxdvll60r67q8"]
+
+[ext_resource type="PackedScene" uid="uid://kk3y127ia4bk" path="res://component/entity/buildings/character_sign_choco/CartoonCharacterSignChocoLate.glb" id="1_ufwpa"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cylle"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kohku"]
+size = Vector3(3, 0.6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sk56m"]
+size = Vector3(3, 0.6, 1.16)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ve6a0"]
+size = Vector3(0.6, 2.4, 1)
+
+[node name="ChocoSign" type="StaticBody3D"]
+collision_mask = 0
+
+[node name="CartoonCharacterSignChocoLate" parent="." instance=ExtResource("1_ufwpa")]
+
+[node name="Trunk" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00004, 0)
+shape = SubResource("CylinderShape3D_cylle")
+
+[node name="Smile" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0)
+shape = SubResource("BoxShape3D_kohku")
+
+[node name="Hat" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.7, 0)
+shape = SubResource("BoxShape3D_sk56m")
+
+[node name="Eye1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 3.6, 0)
+shape = SubResource("BoxShape3D_ve6a0")
+
+[node name="Eye2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 3.6, 0)
+shape = SubResource("BoxShape3D_ve6a0")

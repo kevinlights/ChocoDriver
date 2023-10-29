@@ -14,6 +14,7 @@ size = Vector3(4, 4, 4)
 points = PackedVector3Array(2, 0, 2, -6, 0, 0, -4, 0, 2, -6, 0, -4, -4, 0, -6, 2, 0, -6, 2, 8.725, 2, 2, 8.725, -6, -4, 8.725, -6, -6, 11.45, -4, -6, 11.45, 0, -4, 8.725, 2, 2, 12.45, -2, -6, 12.45, -2, 2, 11.45, -4, 2, 11.45, 0)
 
 [node name="StairHouse" type="StaticBody3D"]
+collision_mask = 0
 
 [node name="OuterStairsHouse" parent="." instance=ExtResource("1_h07vm")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
