@@ -22,3 +22,7 @@ func _on_main_action(pressed: bool) -> void:
 		set_engine_force(max_engine_force)
 	else:
 		set_engine_force(0.0)
+
+
+func _on_analog_action(side: int, value: float) -> void:
+	set_engine_force(side * value * max_engine_force)

@@ -16,12 +16,14 @@ func _init() -> void:
 func drive_with(commander: LocalInput) -> void:
 	commander.dir_changed.connect(_on_dir_changed)
 	commander.main_action.connect(_on_main_action)
+	commander.analog_action.connect(_on_analog_action)
 	_current_commander = commander
 
 
 func get_out() -> void:
 	_current_commander.dir_changed.disconnect(_on_dir_changed)
 	_current_commander.main_action.disconnect(_on_main_action)
+	_current_commander.analog_action.disconnect(_on_analog_action)
 	_current_commander = null
 
 
@@ -59,4 +61,9 @@ func _on_dir_changed(_dir: Vector2) -> void:
 
 ## Need to be overridden to react to main action
 func _on_main_action(_pressed: bool) -> void:
+	pass
+
+
+## Need to be overridden to react to analog actions
+func _on_analog_action(_side: int, _value: float) -> void:
 	pass
