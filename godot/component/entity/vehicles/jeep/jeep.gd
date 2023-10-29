@@ -10,8 +10,25 @@ func steer(ratio: float) -> void:
 	set_steering(ratio * max_steering)
 
 
+func hand_brake(enabled: bool) -> void:
+	if enabled:
+		set_brake(max_brake_force)
+	else:
+		set_brake(0.0)
+
+
 func get_free_seat() -> Node3D:
 	return %RearSeat
+
+
+func drive_with(commander: LocalInput) -> void:
+	hand_brake(false)
+	super.drive_with(commander)
+
+
+func get_out() -> void:
+	hand_brake(true)
+	super.get_out()
 
 
 func _on_dir_changed(dir: Vector2) -> void:
@@ -26,10 +43,7 @@ func _on_main_action(pressed: bool) -> void:
 
 
 func _on_stop_action(pressed: bool) -> void:
-	if pressed:
-		set_brake(max_brake_force)
-	else:
-		set_brake(0.0)
+	hand_brake(pressed)
 
 
 func _on_analog_action(side: int, value: float) -> void:
