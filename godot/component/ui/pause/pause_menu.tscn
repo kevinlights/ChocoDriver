@@ -40,7 +40,6 @@ text = "Resume"
 [node name="TitleButton" type="Button" parent="Buttons"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 33
-disabled = true
 text = "Return to title screen"
 
 [node name="QuitButton" type="Button" parent="Buttons"]

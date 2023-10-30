@@ -20,7 +20,8 @@ func _on_resume_button_pressed():
 
 
 func _on_title_button_pressed():
-	pass # Replace with function body.
+	get_tree().reload_current_scene()
+	resume()
 
 
 func _on_quit_button_pressed():
