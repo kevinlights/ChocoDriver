@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://7ivipmwaw24t"]
+[gd_scene load_steps=25 format=3 uid="uid://7ivipmwaw24t"]
 
 [ext_resource type="Texture2D" uid="uid://cgwafs6ukpm7y" path="res://component/entity/ground/ground051.jpg" id="1_3ytcp"]
 [ext_resource type="Script" path="res://run/levels/camera_tracker.gd" id="1_qdm47"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bohus0ptrc77h" path="res://component/entity/buildings/summit_gate/summit_gate.tscn" id="14_ky6m3"]
 [ext_resource type="Texture2D" uid="uid://daewyr44tkkm0" path="res://effect/sky/sky_stk.jpg" id="15_5bqty"]
 [ext_resource type="PackedScene" uid="uid://c68bdcjpdm1y2" path="res://component/ui/pause/pause_menu.tscn" id="16_orqqe"]
+[ext_resource type="PackedScene" uid="uid://bmgwhm6ejsden" path="res://component/ui/victory/victory_menu.tscn" id="17_1u7wg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ctk0t"]
 size = Vector3(500, 10, 500)
@@ -132,30 +133,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.26687, 0, -29.5969)
 [node name="FlatTriangle6" parent="Props" instance=ExtResource("7_yyaog")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8728, 0, -13.1894)
 
-[node name="TinyPlane" parent="." instance=ExtResource("4_tbpfc")]
+[node name="Vehicles" type="Node3D" parent="."]
+
+[node name="TinyPlane" parent="Vehicles" instance=ExtResource("4_tbpfc")]
 transform = Transform3D(0.477312, 0.527326, -0.702923, -0.741391, 0.671074, 0, 0.471713, 0.521141, 0.711266, -76.6685, 15.7672, 53.8067)
 
-[node name="TinyPlane2" parent="." instance=ExtResource("4_tbpfc")]
+[node name="TinyPlane2" parent="Vehicles" instance=ExtResource("4_tbpfc")]
 transform = Transform3D(-0.153959, -0.170091, -0.973328, -0.741391, 0.671074, 4.00299e-08, 0.653174, 0.721616, -0.229421, -10.5959, 3.94108, -35.7482)
 
-[node name="Jeep1" parent="." instance=ExtResource("6_nnvc5")]
+[node name="Jeep1" parent="Vehicles" instance=ExtResource("6_nnvc5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.1205, 0.747562, 8.03092)
 
-[node name="Jeep2" parent="." instance=ExtResource("6_nnvc5")]
+[node name="Jeep2" parent="Vehicles" instance=ExtResource("6_nnvc5")]
 transform = Transform3D(1, 0, 0, 0, 0.956386, -0.292105, 0, 0.292105, 0.956386, -13.4204, 0.313514, -7.30216)
 
-[node name="Jeep5" parent="." instance=ExtResource("6_nnvc5")]
+[node name="Jeep5" parent="Vehicles" instance=ExtResource("6_nnvc5")]
 transform = Transform3D(1, 0, 0, 0, 0.956386, -0.292105, 0, 0.292105, 0.956386, -63.9133, 13.4172, 1.37686)
 
-[node name="Jeep4" parent="." instance=ExtResource("6_nnvc5")]
+[node name="Jeep4" parent="Vehicles" instance=ExtResource("6_nnvc5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.04618, 5.23869, -0.00916004)
 
-[node name="Jeep3" parent="." instance=ExtResource("6_nnvc5")]
+[node name="Jeep3" parent="Vehicles" instance=ExtResource("6_nnvc5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.0559, 8.17644, 19.5959)
-
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_ndffw")
-script = ExtResource("8_iulsm")
 
 [node name="Buildings" type="Node3D" parent="."]
 
@@ -186,9 +185,17 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 80.571
 [node name="SummitGate1" parent="Buildings" instance=ExtResource("14_ky6m3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.9918, 0, 0)
 
-[node name="TitleScreen" parent="." instance=ExtResource("13_2xijd")]
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_ndffw")
+script = ExtResource("8_iulsm")
 
-[node name="PauseMenu" parent="." instance=ExtResource("16_orqqe")]
+[node name="UI" type="Node" parent="."]
+
+[node name="TitleScreen" parent="UI" instance=ExtResource("13_2xijd")]
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("16_orqqe")]
+
+[node name="VictoryMenu" parent="UI" instance=ExtResource("17_1u7wg")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jdyq3")
@@ -203,4 +210,4 @@ light_energy = 0.8
 [connection signal="dir_changed" from="MainWalker/Control" to="MainWalker" method="_on_dir_changed"]
 [connection signal="get_in_action" from="MainWalker/Control" to="MainWalker" method="_on_get_in_action"]
 [connection signal="main_action" from="MainWalker/Control" to="MainWalker" method="_on_main_action"]
-[connection signal="start_game" from="TitleScreen" to="MainWalker/Control" method="_on_title_screen_start_game"]
+[connection signal="start_game" from="UI/TitleScreen" to="MainWalker/Control" method="_on_title_screen_start_game"]
