@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://7ivipmwaw24t"]
+[gd_scene load_steps=26 format=3 uid="uid://7ivipmwaw24t"]
 
 [ext_resource type="Texture2D" uid="uid://cgwafs6ukpm7y" path="res://component/entity/ground/ground051.jpg" id="1_3ytcp"]
 [ext_resource type="Script" path="res://run/levels/camera_tracker.gd" id="1_qdm47"]
@@ -48,6 +48,8 @@ sky = SubResource("Sky_ix450")
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_sky_contribution = 0.0
 ambient_light_energy = 0.5
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_cdiox"]
 
 [node name="InfiniteLevel" type="Node3D"]
 
@@ -204,6 +206,17 @@ environment = SubResource("Environment_jdyq3")
 transform = Transform3D(0.769065, 0.23434, -0.594663, 0, 0.930366, 0.366631, 0.639171, -0.281963, 0.715512, 0, 12.4629, 0)
 light_energy = 0.8
 
+[node name="Limits" type="Node3D" parent="."]
+
+[node name="BottomLimitArea" type="Area3D" parent="Limits"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -100, 0)
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+
+[node name="BottomLimitShape" type="CollisionShape3D" parent="Limits/BottomLimitArea"]
+shape = SubResource("WorldBoundaryShape3D_cdiox")
+
 [connection signal="focus_required" from="MainWalker" to="CameraTracker" method="_on_focus_required"]
 [connection signal="got_in" from="MainWalker" to="MusicPlayer" method="_on_driver_got_in"]
 [connection signal="got_out" from="MainWalker" to="MusicPlayer" method="_on_driver_got_out"]
@@ -211,3 +224,5 @@ light_energy = 0.8
 [connection signal="get_in_action" from="MainWalker/Control" to="MainWalker" method="_on_get_in_action"]
 [connection signal="main_action" from="MainWalker/Control" to="MainWalker" method="_on_main_action"]
 [connection signal="start_game" from="UI/TitleScreen" to="MainWalker/Control" method="_on_title_screen_start_game"]
+[connection signal="visibility_changed" from="UI/VictoryMenu" to="MainWalker/Control" method="_on_victory_menu_visibility_changed"]
+[connection signal="body_shape_entered" from="Limits/BottomLimitArea" to="UI/VictoryMenu" method="_on_bottom_limit_area_body_shape_entered"]

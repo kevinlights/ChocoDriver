@@ -30,5 +30,9 @@ func _on_title_screen_start_game() -> void:
 	_enable()
 
 
+func _on_victory_menu_visibility_changed() -> void:
+	queue_free()
+
+
 func _enable() -> void:
 	set_process_mode(Node.PROCESS_MODE_PAUSABLE)
