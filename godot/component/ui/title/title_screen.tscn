@@ -17,11 +17,20 @@ grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_es6s3")
 
-[node name="Title" type="Label" parent="."]
+[node name="TextContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="TextContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Crazy Driver
-get those chocolate bars!"
+text = "Crazy Choco Driver"
+horizontal_alignment = 1
+
+[node name="BlaBla" type="Label" parent="TextContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Pick those chocolate bars, and reach space to savor them!
+:-p"
 horizontal_alignment = 1
 
 [node name="Buttons" type="VBoxContainer" parent="."]
