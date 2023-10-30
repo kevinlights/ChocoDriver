@@ -2,7 +2,7 @@ extends VSplitContainer
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_released("ui_cancel") and not get_tree().is_paused():
+	if event.is_action_released("ui_pause") and not get_tree().is_paused():
 		get_tree().set_pause(true)
 		show()
 
