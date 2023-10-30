@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://7ivipmwaw24t"]
+[gd_scene load_steps=23 format=3 uid="uid://7ivipmwaw24t"]
 
 [ext_resource type="Texture2D" uid="uid://cgwafs6ukpm7y" path="res://component/entity/ground/ground051.jpg" id="1_3ytcp"]
 [ext_resource type="Script" path="res://run/levels/camera_tracker.gd" id="1_qdm47"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bwhwbm6jrvg42" path="res://component/entity/buildings/outer_stairs_house/outer_stairs_house.tscn" id="11_j8m6y"]
 [ext_resource type="PackedScene" uid="uid://cxdvll60r67q8" path="res://component/entity/buildings/character_sign_choco/character_sign_choco.tscn" id="13_2x2n6"]
 [ext_resource type="PackedScene" uid="uid://uy3pgfv4q3iy" path="res://component/ui/title/title_screen.tscn" id="13_2xijd"]
+[ext_resource type="PackedScene" uid="uid://bohus0ptrc77h" path="res://component/entity/buildings/summit_gate/summit_gate.tscn" id="14_ky6m3"]
 [ext_resource type="Texture2D" uid="uid://daewyr44tkkm0" path="res://effect/sky/sky_stk.jpg" id="15_5bqty"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ctk0t"]
@@ -119,7 +120,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.80
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -34.0204, 0, -17.8459)
 
 [node name="FlatTriangle3" parent="Props" instance=ExtResource("7_yyaog")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.48379, 0, -2.61738)
+transform = Transform3D(-0.0662566, 0, 0.997803, 0, 1, 0, -0.997803, 0, -0.0662566, -30.389, 0, 1.24129)
 
 [node name="FlatTriangle4" parent="Props" instance=ExtResource("7_yyaog")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.77241, 0, 12.0265)
@@ -141,6 +142,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.12
 
 [node name="Jeep2" parent="." instance=ExtResource("6_nnvc5")]
 transform = Transform3D(1, 0, 0, 0, 0.956386, -0.292105, 0, 0.292105, 0.956386, -13.4204, 0.313514, -7.30216)
+
+[node name="Jeep5" parent="." instance=ExtResource("6_nnvc5")]
+transform = Transform3D(1, 0, 0, 0, 0.956386, -0.292105, 0, 0.292105, 0.956386, -63.9133, 13.4172, 1.37686)
 
 [node name="Jeep4" parent="." instance=ExtResource("6_nnvc5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.04618, 5.23869, -0.00916004)
@@ -177,6 +181,9 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -24.79
 
 [node name="ChocoSign2" parent="Buildings" instance=ExtResource("13_2x2n6")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 80.5713, 0, 0.979666)
+
+[node name="SummitGate1" parent="Buildings" instance=ExtResource("14_ky6m3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.9918, 0, 0)
 
 [node name="TitleScreen" parent="." instance=ExtResource("13_2xijd")]
 
