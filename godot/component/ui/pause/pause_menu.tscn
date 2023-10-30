@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://c68bdcjpdm1y2"]
+
+[ext_resource type="Script" path="res://component/ui/pause/pause_menu.gd" id="1_yqs56"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_ucj0l"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_2elwo"]
+events = [SubResource("InputEventAction_ucj0l")]
+
+[node name="PauseMenu" type="VSplitContainer"]
+process_mode = 3
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_yqs56")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Pause"
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+process_mode = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ResumeButton" type="Button" parent="Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+text = "Resume"
+
+[node name="TitleButton" type="Button" parent="Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+disabled = true
+text = "Return to title screen"
+
+[node name="QuitButton" type="Button" parent="Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+shortcut = SubResource("Shortcut_2elwo")
+text = "Quit"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Buttons/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Buttons/TitleButton" to="." method="_on_title_button_pressed"]
+[connection signal="pressed" from="Buttons/QuitButton" to="." method="_on_quit_button_pressed"]

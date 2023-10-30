@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://7ivipmwaw24t"]
+[gd_scene load_steps=24 format=3 uid="uid://7ivipmwaw24t"]
 
 [ext_resource type="Texture2D" uid="uid://cgwafs6ukpm7y" path="res://component/entity/ground/ground051.jpg" id="1_3ytcp"]
 [ext_resource type="Script" path="res://run/levels/camera_tracker.gd" id="1_qdm47"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://uy3pgfv4q3iy" path="res://component/ui/title/title_screen.tscn" id="13_2xijd"]
 [ext_resource type="PackedScene" uid="uid://bohus0ptrc77h" path="res://component/entity/buildings/summit_gate/summit_gate.tscn" id="14_ky6m3"]
 [ext_resource type="Texture2D" uid="uid://daewyr44tkkm0" path="res://effect/sky/sky_stk.jpg" id="15_5bqty"]
+[ext_resource type="PackedScene" uid="uid://c68bdcjpdm1y2" path="res://component/ui/pause/pause_menu.tscn" id="16_orqqe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ctk0t"]
 size = Vector3(500, 10, 500)
@@ -186,6 +187,8 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 80.571
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.9918, 0, 0)
 
 [node name="TitleScreen" parent="." instance=ExtResource("13_2xijd")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("16_orqqe")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jdyq3")
