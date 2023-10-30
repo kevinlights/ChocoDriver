@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmgwhm6ejsden"]
+
+[ext_resource type="Script" path="res://component/ui/victory/victory_menu.gd" id="1_2kg3i"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_ucj0l"]
+action = &"ui_cancel"
+
+[sub_resource type="Shortcut" id="Shortcut_2elwo"]
+events = [SubResource("InputEventAction_ucj0l")]
+
+[node name="VictoryMenu" type="VSplitContainer"]
+process_mode = 3
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_2kg3i")
+
+[node name="TextContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="TextContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Victory!"
+horizontal_alignment = 1
+
+[node name="BlaBla" type="Label" parent="TextContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "That's not a common way to go to space, but you are welcome !"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+process_mode = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TitleButton" type="Button" parent="Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+text = "Return to title screen"
+
+[node name="QuitButton" type="Button" parent="Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+shortcut = SubResource("Shortcut_2elwo")
+text = "Quit"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Buttons/TitleButton" to="." method="_on_title_button_pressed"]
+[connection signal="pressed" from="Buttons/QuitButton" to="." method="_on_quit_button_pressed"]
