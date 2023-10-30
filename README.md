@@ -4,6 +4,10 @@ A 3D game where you drive vehicles to get chocolate.
 
 ## :copyright: Credits
 
+### Graphics
+
+- Cloud sky box from SuperTuxKart, [made by MiniBjorn and available at OpenGameArt.org](https://opengameart.org/content/cloudy-sky).
+
 ### Musics
 
 - "Wesh tone Realaze" of Hiphop domain
