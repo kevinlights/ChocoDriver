@@ -25,6 +25,7 @@ size = Vector3(500, 10, 500)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ot7iy"]
 albedo_texture = ExtResource("1_3ytcp")
 subsurf_scatter_strength = 0.73
+uv1_scale = Vector3(100, 100, 100)
 grow_amount = 0.352
 point_size = 55.9
 
