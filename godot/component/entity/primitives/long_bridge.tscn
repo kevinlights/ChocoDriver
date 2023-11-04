@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://da7q7i7pqa5pw"]
+
+[ext_resource type="Texture2D" uid="uid://bonhqr3bduuq5" path="res://component/entity/buildings/summit_gate/SummitGate_Stone_bricks.png" id="1_036e1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ih8w4"]
+friction = 0.9
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vytyd"]
+albedo_texture = ExtResource("1_036e1")
+uv1_scale = Vector3(3, 15, 1.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qy4tk"]
+material = SubResource("StandardMaterial3D_vytyd")
+size = Vector3(5, 0.5, 25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hpjbs"]
+size = Vector3(5, 0.5, 25)
+
+[node name="LongBridge" type="StaticBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_ih8w4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_qy4tk")
+
+[node name="Shape" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_hpjbs")
