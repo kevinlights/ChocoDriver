@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://7ivipmwaw24t"]
+[gd_scene load_steps=27 format=3 uid="uid://7ivipmwaw24t"]
 
 [ext_resource type="Texture2D" uid="uid://cgwafs6ukpm7y" path="res://component/entity/ground/ground051.jpg" id="1_3ytcp"]
 [ext_resource type="Script" path="res://run/levels/camera_tracker.gd" id="1_qdm47"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bwhwbm6jrvg42" path="res://component/entity/buildings/outer_stairs_house/outer_stairs_house.tscn" id="11_j8m6y"]
 [ext_resource type="PackedScene" uid="uid://cxdvll60r67q8" path="res://component/entity/buildings/character_sign_choco/character_sign_choco.tscn" id="13_2x2n6"]
 [ext_resource type="PackedScene" uid="uid://uy3pgfv4q3iy" path="res://component/ui/title/title_screen.tscn" id="13_2xijd"]
+[ext_resource type="PackedScene" uid="uid://da7q7i7pqa5pw" path="res://component/entity/primitives/long_bridge.tscn" id="13_06kfi"]
 [ext_resource type="PackedScene" uid="uid://bohus0ptrc77h" path="res://component/entity/buildings/summit_gate/summit_gate.tscn" id="14_ky6m3"]
 [ext_resource type="Texture2D" uid="uid://daewyr44tkkm0" path="res://effect/sky/sky_stk.jpg" id="15_5bqty"]
 [ext_resource type="PackedScene" uid="uid://c68bdcjpdm1y2" path="res://component/ui/pause/pause_menu.tscn" id="16_orqqe"]
@@ -187,6 +188,27 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 80.571
 
 [node name="SummitGate1" parent="Buildings" instance=ExtResource("14_ky6m3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.9918, 0, 0)
+
+[node name="SummitGate2" parent="Buildings" instance=ExtResource("14_ky6m3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -63.9918, 0, -32.9657)
+
+[node name="SummitGate3" parent="Buildings" instance=ExtResource("14_ky6m3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.9918, 0, -68.1869)
+
+[node name="SummitGate4" parent="Buildings" instance=ExtResource("14_ky6m3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.9918, 0, -102.84)
+
+[node name="LongBridge1" parent="Buildings" instance=ExtResource("13_06kfi")]
+transform = Transform3D(0.754616, -0.186763, 0.629026, 0.502561, 0.780864, -0.371057, -0.421884, 0.59613, 0.683112, -39.7875, 2.45974, 13.9557)
+
+[node name="LongBridge2" parent="Buildings" instance=ExtResource("13_06kfi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.987, 19.6737, -16.1462)
+
+[node name="LongBridge3" parent="Buildings" instance=ExtResource("13_06kfi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.987, 12.2193, -85.5014)
+
+[node name="LongBridge4" parent="Buildings" instance=ExtResource("13_06kfi")]
+transform = Transform3D(-3.81324e-08, -0.48885, 0.872368, -2.13683e-08, 0.872368, 0.48885, -1, 1.34437e-15, -4.37114e-08, -99.9013, 5.74882, -0.497192)
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_ndffw")
