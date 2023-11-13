@@ -397,6 +397,7 @@ script = ExtResource("8_iulsm")
 [node name="PauseMenu" parent="UI" instance=ExtResource("16_orqqe")]
 
 [node name="VictoryMenu" parent="UI" instance=ExtResource("17_1u7wg")]
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jdyq3")
@@ -416,6 +417,16 @@ monitorable = false
 [node name="BottomLimitShape" type="CollisionShape3D" parent="Limits/BottomLimitArea"]
 shape = SubResource("WorldBoundaryShape3D_cdiox")
 
+[node name="TopLimitArea" type="Area3D" parent="Limits"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 499.501, 0)
+collision_mask = 2
+input_ray_pickable = false
+monitorable = false
+
+[node name="BottomLimitShape" type="CollisionShape3D" parent="Limits/TopLimitArea"]
+transform = Transform3D(-1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_cdiox")
+
 [connection signal="focus_required" from="MainWalker" to="CameraTracker" method="_on_focus_required"]
 [connection signal="got_in" from="MainWalker" to="MusicPlayer" method="_on_driver_got_in"]
 [connection signal="got_out" from="MainWalker" to="MusicPlayer" method="_on_driver_got_out"]
@@ -425,3 +436,4 @@ shape = SubResource("WorldBoundaryShape3D_cdiox")
 [connection signal="start_game" from="UI/TitleScreen" to="MainWalker/Control" method="_on_title_screen_start_game"]
 [connection signal="visibility_changed" from="UI/VictoryMenu" to="MainWalker/Control" method="_on_victory_menu_visibility_changed"]
 [connection signal="body_shape_entered" from="Limits/BottomLimitArea" to="UI/VictoryMenu" method="_on_bottom_limit_area_body_shape_entered"]
+[connection signal="body_shape_entered" from="Limits/TopLimitArea" to="UI/VictoryMenu" method="_on_bottom_limit_area_body_shape_entered"]
