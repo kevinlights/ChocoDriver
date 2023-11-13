@@ -19,7 +19,9 @@ func _on_quit_button_pressed():
 	get_tree().quit()
 
 
-func _on_visibility_changed():
+func _on_visibility_changed() -> void:
+	if !is_inside_tree():
+		return
 	set_process_input(true)
 	%TitleButton.grab_focus()
 
