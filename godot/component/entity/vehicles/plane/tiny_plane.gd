@@ -30,8 +30,14 @@ func get_free_seat() -> Node3D:
 
 
 func _physics_process(_delta) -> void:
+	# Command part
 	_apply_plane_rotation()
 	_apply_plane_thrust()
+
+	# Air simulation part
+	if is_sleeping():
+		return
+
 	_apply_wing_resistance()
 	_apply_lift()
 
@@ -50,11 +56,10 @@ func _apply_wing_resistance() -> void:
 	var vertical_speed = linear_velocity.dot(transform.basis * Vector3.UP)
 	var local_wing_force = Vector3.UP * -wing_resistance * vertical_speed
 	var wing_force = transform.basis * local_wing_force
-	if _current_commander != null:
-		print("= = =")
-		print("Vertical speed : ", vertical_speed)
-		print("Wing force local :", local_wing_force)
-		print("Wing force : ", wing_force)
+	print("= = =")
+	print("Vertical speed : ", vertical_speed)
+	print("Wing force local :", local_wing_force)
+	print("Wing force : ", wing_force)
 	apply_central_force(wing_force)
 
 
@@ -64,11 +69,10 @@ func _apply_lift() -> void:
 		forward_speed = 0.0
 	var local_lift_force = Vector3.UP * lift * forward_speed
 	var lift_force = transform.basis * local_lift_force
-	if _current_commander != null:
-		print("- - -")
-		print("Forward speed : ", forward_speed)
-		print("Lift force local :", local_lift_force)
-		print("Lift force : ", lift_force)
+	print("- - -")
+	print("Forward speed : ", forward_speed)
+	print("Lift force local :", local_lift_force)
+	print("Lift force : ", lift_force)
 	apply_central_force(lift_force)
 
 
