@@ -221,7 +221,7 @@ transform = Transform3D(0.951067, 0, -0.308984, 0, 1, 0, 0.308984, 0, 0.951067, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.042, 39.7954, -37.6605)
 
 [node name="TinyPlane2" parent="Vehicles" instance=ExtResource("4_tbpfc")]
-transform = Transform3D(-0.0289684, 0, -0.99958, 0, 1, 0, 0.99958, 0, -0.0289684, 29.3845, 0, 47.1722)
+transform = Transform3D(-0.106056, 0, -0.99436, 0, 1, 0, 0.99436, 0, -0.106056, 8.34867, 20.1877, 42.3637)
 
 [node name="Jeep1" parent="Vehicles" instance=ExtResource("6_nnvc5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 146.474, 0.747562, 98.7891)
