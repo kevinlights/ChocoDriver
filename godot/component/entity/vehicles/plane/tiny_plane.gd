@@ -4,8 +4,8 @@ extends SeatedVehicle
 @export var thrust_power: float = 10000.0
 @export var turn_to_torque: float = 2000.0
 @export var move_to_pitch: float = 4000.0
-@export var wing_resistance: float = 10.0
-@export var lift: float = 500.0
+@export var wing_resistance: float = 5000.0
+@export var lift: float = 100.0
 
 var target_torque: float = 0.0
 var target_pitch: float = 0.0
