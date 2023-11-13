@@ -26,5 +26,8 @@ func _on_visibility_changed() -> void:
 	%TitleButton.grab_focus()
 
 
-func _on_bottom_limit_area_body_shape_entered(_body_rid, _body, _body_shape_index, _local_shape_index) -> void:
+func _on_space_reached(message: String = ""):
+	if message:
+		%Message.set_text(message)
+
 	show()
