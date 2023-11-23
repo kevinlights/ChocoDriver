@@ -238,6 +238,10 @@ transform = Transform3D(0.953717, -0.270273, 0.131821, 0, 0.438371, 0.898794, -0
 [node name="Jeep3" parent="Vehicles" instance=ExtResource("6_nnvc5")]
 transform = Transform3D(-0.103626, 0, 0.994616, 0, 1, 0, -0.994616, 0, -0.103626, 19.6109, 11.4313, 28.3118)
 
+[node name="Jeep11" parent="Vehicles" instance=ExtResource("6_nnvc5")]
+transform = Transform3D(0.666649, 0, 0.745371, 0, 1, 0, -0.745371, 0, 0.666649, 8.69616, -0.0833688, 43.0762)
+sleeping = true
+
 [node name="Jeep6" parent="Vehicles" instance=ExtResource("6_nnvc5")]
 transform = Transform3D(0.973786, 0, -0.227467, 0, 1, 0, 0.227467, 0, 0.973786, -6.80565, 11.4313, 54.7441)
 
